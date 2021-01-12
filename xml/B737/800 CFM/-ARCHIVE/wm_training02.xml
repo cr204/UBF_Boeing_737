@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  BOEING 737 SAMPLE XML                    ** -->
+<!-- *********************************************** -->
+
+<site_data>
+	
+	<!-- 1. SETTINGS - Here come some configuration settings that we use for this training! -->
+	<settings>
+		<training name="HYDRAULIC PUMP OVERHEAT IN CRUISE" />
+		<screen_animation file="xml/B737/737-800/HYDRAULIC PUMP OVERHEAT/ANIMATION HYDRAULIC PUMP OVERHEAT.xml" defaults="xml/B737/SHARED ELEMENTS/DEFAULT PHASES/PHASE CRUISE.xml" />
+		<sound status="on" />
+	</settings>
+	
+	<!-- 2. STATES -->
+	<states>
+		<!-- DEFAULT STATE, before training starts -->
+		<state id="default">
+			<help_box><![CDATA[ PRESS PLAY BUTTON(>) TO BEGIN ]]></help_box>
+		
+			<screen screenID="default" />
+		</state>
+		
+		<!-- START STATE, when training starts -->
+		<state id="start">
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... CANCEL  ]]></help_box>
+			<element panel="recall" name="hyd_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+			<screen screenID="start"/>
+		</state>
+
+		<!-- Step 1. Master caut -->
+		<state id="1" flightdeck="disable">
+			<key panel="recall" element="master_caut" switch="off" />
+			<help_box source="SOP" ><![CDATA[ RECALL > CAPT RECALL... OFF ]]></help_box>
+			<screen name="ecam" screenID="1"/>
+		</state>
+
+		<!-- Step 2 -->
+		<state id="2">
+			<key panel="hydraulics_doors" />
+			<help_box source="QRH"><![CDATA[ NAVS AND DISPLAYS > VHF NAV SELECTOE... ON 1 ]]></help_box>
+			<screen name="ecam" screenID="2" />
+		</state>
+		
+		<!-- Step 3 -->
+		<state id="3">
+			<key panel="hydraulics_doors" element="hyd_pump_elec1_switch" switch="2" />
+			<help_box note="Note: from main XML!"><![CDATA[ OPEN HYDRAULICS DOORS TO COMPLETE STEP ]]></help_box>
+			<info_box1><![CDATA[ OPEN HYDRAULICS DOORS TO COMPLETE STEP! ]]></info_box1>
+			<screen name="ecam" screenID="3" />
+			<additional screen="c_press, bleed, cond" />
+		</state>
+		
+		<!-- Step 4 -->
+		<state id="4">
+			<key panel="recall" element="recall" switch="off" />
+			<help_box source="SOPS"  note="Note: from main XML!"><![CDATA[ DOME WHITE > SWITCH... BRIGHT ]]></help_box>
+			<screen name="ecam" screenID="4" />
+		</state>
+
+		<!-- Step 5 -->
+		<state id="5">
+			<key panel="recall" element="master_caut" switch="off" />
+			<key panel="dome_white" element="dome_white_switch" switch="3" />
+			<help_box completed="yes"><![CDATA[ECAM ACTIONS COMPELETE ]]></help_box>
+			<screen name="ecam" screenID="5" />
+		</state>
+		
+	</states>
+	
+</site_data>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  AUTOMATIC UNLOCK                    ** -->
+<!-- *********************************************** -->
+
+<site_data>
+	
+	<!-- 1. SETTINGS - Here come some configuration settings that we use for this training! -->
+	<settings>
+		<training name="AUTOMATIC UNLOCK IN CRUISE" />
+		<screen_animation file="xml/B737/737-800 CFM/AUTOMATIC UNLOCK/ANIMATION AUTOMATIC UNLOCK CRUISE.xml" defaults="xml/B737/SHARED ELEMENTS/DEFAULT PHASES/PHASE CRUISE.xml" />
+		<sound status="on" />
+	</settings>
+	
+	<!-- 2. STATES -->
+	<states>
+		<!-- DEFAULT STATE, before training starts -->
+		<state id="default">
+			<help_box><![CDATA[ PRESS PLAY BUTTON(>) TO BEGIN ]]></help_box>
+		
+			<screen screenID="default" />
+		</state>
+		
+		<!-- START STATE, when training starts -->
+		<state id="start">
+			<help_box source="SOPS" ><![CDATA[ WARNING SYSTEMS > CONFIRM ASSAULT ]]></help_box>
+			<screen screenID="start"/>
+		</state>
+
+		<!-- Step 1 -->
+		<state id="1" >
+			<key panel="stab_trim" />
+			<help_box><![CDATA[ WARNING SYSTEMS > CONFIRM ASSAULT  ]]></help_box>
+			<screen name="ecam" screenID="1"/>
+		</state>
+
+		<!-- Step 2 -->
+		<state id="2">
+			<key panel="TBD SOUND" />
+			<help_box source="QRH"><![CDATA[ AUTOMATIC UNLOCK CHECKLIST > FLT DK DOOR SWITCH... DENY ]]></help_box>
+			<screen name="ecam" screenID="2" />
+		</state>
+		
+		<!-- Step 3 -->
+		<state id="3">
+			<key panel="stab_trim" element="flt_dk_door_switch" switch="3" />
+			<help_box source="TBD" ><![CDATA[ TBD ]]></help_box> 
+			<screen name="ecam" screenID="3" />
+		</state>
+		
+		<!-- Step 4 -->
+		<state id="4">
+			<key panel="TBD" />
+			<help_box completed="yes"><![CDATA[QRH NNC COMPLETE ]]></help_box>
+			<screen name="ecam" screenID="4" />
+		</state>
+		
+	</states>
+	
+</site_data>
+

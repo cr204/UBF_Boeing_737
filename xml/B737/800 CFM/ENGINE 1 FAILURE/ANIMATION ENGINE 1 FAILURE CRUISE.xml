@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<screen_data>
+	<settings>
+		<!-- No Parallel File Required -->
+	</settings>
+	<animations>
+		<!-- ScreenData for State: Default -->
+		<screen_animation id="default">
+			<!-- No Changes to the Screens-->	
+		</screen_animation>
+		
+		<!-- ScreenData for State: Start -->
+		<screen_animation id="start">
+		
+		<screen name="UDU">
+			<element name="eng1_n1_gauge" property="pointerPosition" value="60" time="3" ease="Quadratic.easeOut" />
+			<element name="eng1_egt_gauge" property="pointerPosition" value="412" time="10" ease="Quadratic.easeOut" />
+			</screen>
+			
+		<screen name="LDU">
+			<element name="screen_blank" property="visible" value="false" />
+			</screen>
+			
+		<screen name="CAPT_PFD">
+				<element name="altimeter_tape" property="altVelocityID" value="ALT_params" />
+				<element name="speed_tape" property="iasPosition" value="230" time="20" ease="Quadratic.easeInOut" />
+				<element name="vsi" property="pointerPosition" wait="15" value="-2" time="10" ease="Quadratic.easeOut" />
+			</screen>
+		</screen_animation>
+		
+		<!-- ScreenData for State: 1 -->
+		<screen_animation id="1">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+
+		<!-- ScreenData for State: 2 -->
+		<screen_animation id="2">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+
+		<!-- ScreenData for State: 3 -->
+		<screen_animation id="3">
+			<!-- No Changes to the Screens-->			
+		</screen_animation>
+		
+		<!-- ScreenData for State: 4 -->
+		<screen_animation id="4">
+			<screen name="UDU">
+				<element name="eng2_fuel_gauge" property="pointerPosition" value="1900" />
+			</screen>
+		</screen_animation>
+		
+		<!-- ScreenData for State: 5 -->
+		<screen_animation id="5">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+		
+		<!-- ScreenData for State: 6 -->
+		<screen_animation id="6">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+		
+		<!-- ScreenData for State: 7 -->
+		<screen_animation id="7">
+			<screen name="UDU">
+				<element name="eng2_fuel_gauge" property="pointerPosition" value="1800" />
+			</screen>
+		</screen_animation>
+		
+		<!-- ScreenData for State: 8 -->
+		<screen_animation id="8">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+		
+		<!-- ScreenData for State: 9 -->
+		<screen_animation id="9">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+
+		<!-- ScreenData for State: 10 -->
+		<screen_animation id="10">
+			<screen name="UDU">
+				<element name="eng2_fuel_gauge" property="pointerPosition" value="1700" />
+			</screen>
+		</screen_animation>
+
+		<!-- ScreenData for State: 11 -->
+		<screen_animation id="11">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+		
+		<!-- ScreenData for State: 12 -->
+		<screen_animation id="12">
+			<!-- No Changes to the Screens-->
+		</screen_animation>	
+		
+		<!-- ScreenData for State: 13 -->
+		<screen_animation id="13">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+		
+		<!-- ScreenData for State: 14 -->
+		<screen_animation id="14">
+			<screen name="UDU">
+				<element name="eng1_fuel_gauge" property="pointerPosition" value="1900" />
+			</screen>
+		</screen_animation>
+		
+		<!-- ScreenData for State: 15 -->
+		<screen_animation id="15">
+			<screen name="UDU">
+				<element name="eng1_fuel_gauge" property="pointerPosition" value="1800" />
+			</screen>
+		</screen_animation>
+
+		<!-- ScreenData for State: 16 -->
+		<screen_animation id="16">
+			<screen name="UDU">
+				<element name="eng1_fuel_gauge" property="pointerPosition" value="1700" />
+			</screen>
+		</screen_animation>
+		
+		<!-- ScreenData for State: 17 -->
+		<screen_animation id="17">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+		
+		<!-- ScreenData for State: 18 -->
+		<screen_animation id="18">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+		
+		<!-- ScreenData for State: 19 -->
+		<screen_animation id="19">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+		
+		<!-- ScreenData for State: 20 -->
+		<screen_animation id="20">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+		
+		<!-- ScreenData for State: 21 -->
+		<screen_animation id="21">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+		
+		<!-- ScreenData for State: 22 -->
+		<screen_animation id="22">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+		
+	</animations>
+<!-- PARAMETERS FOR GAUGE ANIMATIONS: -->
+	
+	<gauge_velocity>
+		<!-- PFD - DRIFTDOWN, PRESSURISATION OK-->
+		<velocities id="ALT_params">
+			<velocity id="vel1" wait="10" altPosition="20000" time="4200" ease="Quadratic.easeNone" />
+		</velocities>
+		
+	</gauge_velocity>
+	
+</screen_data>
+

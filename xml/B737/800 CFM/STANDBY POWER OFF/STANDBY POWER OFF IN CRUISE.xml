@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  STANDBY POWER OFF                                ** -->
+<!-- *********************************************** -->
+
+<site_data>
+	
+	<!-- 1. SETTINGS - Here come some configuration settings that we use for this training! -->
+	<settings>
+		<training name="STANDBY POWER OFF" />
+		<screen_animation file="xml/B737/800 CFM/STANDBY POWER OFF/ANIMATION STANDBY POWER OFF CRUISE.xml" defaults="xml/B737/SHARED ELEMENTS/DEFAULT PHASES/PHASE CRUISE.xml" />
+		<quick_reference file="xml/B737/SHARED ELEMENTS/QRH/STANDBY POWER OFF.xml" />
+		<sound status="on" />
+	</settings>
+	
+	<!-- 2. STATES -->
+	<states>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="default">
+			<help_box><![CDATA[ PRESS PLAY BUTTON(>) TO BEGIN ]]></help_box>
+			<screen screenID="default" />
+		</state>
+<!-- ************************************************** -->		
+		<!-- STEP NUMBER -->
+		<state id="start">
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ ELECTRICAL > CONFIRM FAULT ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="elec_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+			<element panel="electrical2" name="standby_power_off_light" status="on" />
+		<!-- ANIMATION STEP -->
+			<screen screenID="start"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="1" >
+		<!-- KEY ACTION -->	
+			<key panel="electrical2" />
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... CANCEL  ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="electrical2" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="1"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="2">
+		<!-- HELP BOX -->
+			<help_box source="QRH" ><![CDATA[ ELECTRICAL > STANDBY POWER SWITCH ...BAT ]]></help_box>
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="electrical2" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="2" />
+		</state>
+<!-- ************************************************** -->		
+		<!-- STEP NUMBER -->
+		<state id="3">
+		<!-- KEY ACTION -->	
+			<key panel="electrical2" element="standby_power_off_switch" switch="1" />
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="electrical2" />
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="3" />
+		</state>
+<!-- ************************************************** -->	
+		<!-- STEP NUMBER -->
+		<state id="3">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="recall" switch="off" />
+		<!-- HELP BOX -->
+			<help_box completed="yes"><![CDATA[QRH NNC COMPLETE ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="electrical2" name="standby_power_off_light" status="off" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="3" />
+		</state>
+<!-- ************************************************** -->		
+	</states>
+	
+</site_data>

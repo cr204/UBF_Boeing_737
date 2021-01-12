@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<screen_data>
+	<settings>
+		<parallel_animations file="xml/parallel_animations01.xml" />
+	</settings>
+	<animations>
+		<!-- ScreenData for State: Default -->
+		<screen_animation id="default">
+			<screen name="UDU">
+				<element name="eng1_start_valve_open" property="visible" value="false" />
+				<element name="eng2_start_valve_open" property="visible" value="false" />
+				<element name="eng1_oil_filter_bypass" property="visible" value="false" />
+				<element name="eng2_oil_filter_bypass" property="visible" value="false" />
+				<element name="eng1_low_oil_pressure" property="visible" value="false" />
+				<element name="eng2_low_oil_pressure" property="visible" value="false" />
+<!--				<element name="eng2_epr_gauge" property="pointerPosition" value="1.324" />
+				<element name="eng2_epr_gauge" property="donutPosition" value="1.480" />
+				
+				<element name="eng1_egt_gauge" property="pointerPosition" value="428" />
+				<element name="eng2_egt_gauge" property="pointerPosition" value="419" />
+				
+				<element name="eng1_n1_gauge" property="pointerPosition" value="78.5" />
+				<element name="eng1_n1_gauge" property="donutPosition" value="8" />
+
+				<element name="eng2_n1_gauge" property="pointerPosition" value="78.5" />
+				<element name="eng2_n1_gauge" property="donutPosition" value="8" /> -->
+
+				<panel_element panel="apu" name="egt_gauge" value="500" />
+				<panel_element panel="fuel" name="fuel_temp" value="50" />
+				<panel_element panel="flap_indicator" name="flap_indicator" value="270" />
+<!--				<panel_element panel="apu" name="egt_gauge" wait="3" value="1000" time="10" ease="Quadratic.easeOut" /> -->
+<!--				<panel_element panel="pressurisation1" name="diff_press_gauge" value="1" />  -->
+				<panel_element panel="pressurisation1" name="cabin_alt" value="2" />
+<!--				<panel_element panel="pressurisation1" name="cabin_vs_gauge" value="500" /> -->
+				<panel_element panel="electrical1" name="dc_amps" text="112" />
+				
+			</screen>
+
+			<screen name="LDU">
+				<!-- // -->
+				<element name="screen_blank" property="visible" value="true" />
+			</screen>
+			
+			
+			<screen name="CAPT_PFD">
+				<!-- // -->
+			</screen>
+			
+			<screen name="FO_PFD">
+				<!-- // -->
+			</screen>
+			
+		</screen_animation>
+		
+		<!-- ScreenData for State: Start -->
+		<screen_animation id="start">
+			<screen name="UDU">
+				<element name="eng1_start_valve_open" property="visible" value="true" />
+				<element name="eng2_oil_filter_bypass" property="visible" value="true" />
+				<element name="eng1_low_oil_pressure" property="visible" value="true" />
+				
+<!--				<element name="eng1_n1_gauge" property="pointerPosition" value="60" time="15"/> -->
+				<element name="eng1_n1_gauge" property="pointerPosition" value="40" time="10" ease="Quadratic.easeOut" />
+				<element name="eng2_n1_gauge" property="pointerPosition" value="80" time="10" />
+				
+				<element name="eng1_egt_gauge" property="pointerPosition" value="300" time="10" />
+				<element name="eng2_egt_gauge" property="pointerPosition" value="412" time="10" ease="Quadratic.easeOut" />
+				
+			</screen>
+			
+			<screen name="CAPT_PFD">
+<!--				<element name="altimeter_tape" property="altPosition" value="24000" time="190" ease="Quadratic.easeInOut" />  -->
+				<element name="altimeter_tape" property="altVelocityID" value="ALT_vparams" />
+				<element name="speed_tape" property="iasPosition" value="240" time="50" ease="Quadratic.easeInOut" />
+				<element name="vsi" property="pointerPosition" value="60" time="5" ease="Quadratic.easeInOut" />
+				
+				<element name="compass" property="pointerPosition" value="15" time="10" ease="Quadratic.easeInOut" />
+				
+				<xelement id="xelement_red_fd" name="bird" property="visible" value="false" />
+				
+			</screen>
+			
+		</screen_animation>
+		
+		<!-- ScreenData for State: 1 -->
+		<screen_animation id="1">
+			<screen name="UDU">
+				<element name="eng1_start_valve_open" property="visible" value="false" />
+<!--				<panel_element panel="pressurisation1" name="diff_press_gauge" value="10" time="10" />  -->
+				<panel_element panel="pressurisation1" name="diff_press_gauge" property="gaugeVelocityID" value="DiffPress_Gauge_Velocity" />
+<!--				<panel_element panel="pressurisation1" wait="2" name="cabin_alt" value="50" time="15" />  -->
+				<panel_element panel="pressurisation1" name="cabin_alt" property="gaugeVelocityID" value="CabinAlt_Gauge_Velocity" />
+<!--				<panel_element panel="pressurisation1" name="cabin_vs_gauge" wait="2" time="10" value="4000" />  -->
+				<panel_element panel="pressurisation1" name="cabin_vs_gauge" property="gaugeVelocityID" value="CabinVS_Gauge_Velocity" />
+				
+				<panel_element panel="pressurisation2" name="right_duct_pressure" wait="2" time="5" value="80" />
+				<panel_element panel="pressurisation2" name="left_duct_pressure" wait="2" time="10" value="60" />
+				
+			</screen>
+			
+			<screen name="CAPT_PFD">
+<!--				<element name="ah" property="position" value="-10" time="10" />  -->
+				<element name="fd_roll_bar" property="position" value="-20" time="10" />
+			</screen>
+			
+
+		</screen_animation>
+		
+		<!-- ScreenData for State: 2 -->
+		<screen_animation id="2">
+			<screen name="UDU">
+				<panel_element name="standby_hyd_low_pressure_light" panel="flt_controls" status="off" />
+				<panel_element panel="apu" name="egt_gauge" property="gaugeVelocityID" value="APU_EGTGauge_Velocity" />
+				<panel_element panel="fuel" name="fuel_temp" value="-50" time="10" />
+<!--				<panel_element panel="apu" name="apu_fault_light" wait="3" status="on" />  -->
+			</screen>
+	
+			<screen name="CAPT_PFD">
+				<element name="fma1_box" property="play" value="" />
+				<element name="fma2_box" property="play" value="" />
+				<element name="fma3_box" property="play" value="" />
+				<element name="fma4a_box" property="play" value="" />
+			</screen>
+
+		</screen_animation>
+		
+		<!-- ScreenData for State: 3 -->
+		<screen_animation id="3">
+			<screen name="EWD">
+				<element name="ECAM_text" property="addColorText" color="0xFF9900" value="ELEC GEN 1 FAULT" />
+				<element name="ECAM_text" property="addColorText" color="0xFFFFFF" value="COUNTDOWN s10s SEC" lock="false" help_box="WAIT SOME TIME!" updatedColor="0xFF9900" appendText="APPENDED TEXT2" />
+				<element name="ECAM_text" property="addColorText" color="0x59DFFD" value="GEN 1...............OFF" />
+			</screen>
+
+			<screen name="SD" updateSystem="elec">   
+				<element name="GEN1_OFF" property="visible" value="false" />
+			</screen>
+			
+		<!--		<screen name="SD" updateSystem="cond">    -->
+			
+			<screen name="SD" currentSystem="cond">
+				<element name="PACK_REG" property="visible" value="false" />
+				<element name="CKPT_TEMP" property="text" value="-27" />
+				<element name="FWD_CABIN_TEMP" property="text" value="10" />
+				<element name="AFT_CABIN_TEMP" property="text" value="30" />
+			</screen>
+			
+			<screen name="SD" updateSystem="door">
+<!--				<element name="OXYGEN_PRESSURE" property="text" value="1000" />  -->
+				<element name="DOOR_1L_SLIDE" property="visible" value="false" />
+				<element name="DOOR_1R_SLIDE" property="visible" value="false" />
+				<element name="DOOR_2L_SLIDE" property="visible" value="false" />
+				<element name="DOOR_2R_SLIDE" property="visible" value="false" />
+			</screen>
+			
+		</screen_animation>
+
+		<!-- ScreenData for State: 4 -->
+		<screen_animation id="4">
+			<screen name="EWD">
+<!--				<element name="ECAM_text" property="addColorText" color="0xFFFFFF" value="COUNTDOWN s10s SEC" lock="false" help_box="WAIT SOME TIME!" />  -->
+				<element name="ECAM_text" property="addColorText" color="0xFF9900" value="ELEC GEN 1 FAULT" />
+				<element name="ECAM_text" property="addColorText" color="0x59DFFD" value="MAIN GALLEY" />
+				<element name="ECAM_text" property="addColorText" color="0xFFFFFF" value="GEN 1 FAULT" />
+			</screen>
+
+			<screen name="SD" currentSystem="elec">
+				<element name="GEN1_OFF" property="visible" value="true" />
+			</screen>
+		</screen_animation>
+
+		<!-- ScreenData for State: 5 -->
+		<screen_animation id="5">
+			<screen name="EWD">
+				<!-- //  -->
+				<element name="ECAM_text" property="addColorText" color="0xFF9900" value="TEST VALUE" />
+			
+			</screen>
+			
+			<screen name="SD" currentSystem="status2">
+<!--			 	<element name="green_arrow" property="visible" value="false" />
+				<element name="STATUS_main" property="addColorText" color="0x18F360" value="PACK 2 AT FIXED TEMP" />
+				<element name="STATUS_main" property="addColorText" color="0x18F360" value="" />
+				<element name="STATUS_main" property="addColorText" color="0x18F360" value="CAT 1 ONLY" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="L TK PUMP 2 " />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="R TK PUMP 2" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="RUD TRV LIM2" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="BSCU CH 2" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="REVERSER 2" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="VENT EXTRACT" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="GRD COOL" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="PACK 2 REGUL" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="MAIN GALLEY" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="YAW DAMPER 2" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="RUD TRIM 2" />  -->
+				<panel_element panel="fcu" name="spd" property="showNumber" value="0.24" wait="5" />
+			</screen>
+			
+			<screen name="SD" updateSystem="status">
+				<element name="STATUS_main" property="addColorText" color="0x18F360" value="CAT 3 SINGLE ONLY" />
+				
+				<element name="STATUS_inop" property="addColorText" color="0xFFFFFF" value="    uINOP SYSu" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="CAT 3 DUAL" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="MAIN GALLEY" />
+				<element name="STATUS_inop" property="addColorText" color="0xFF9900" value="GEN 1" />
+			</screen>
+			
+			<screen name="SD" updateSystem="fctl">
+				<element name="PITCH_TRIM" property="text" value="1.5" color="0xFF9900" />
+				<element name="PITCH_TRIM_DIRECTION" property="gotoFrame" value="3" />
+			</screen>
+			
+		</screen_animation>
+
+		<!-- ScreenData for State: 6 -->
+		<screen_animation id="6">
+			<screen name="EWD">
+				<element name="ECAM_text" property="addColorText" color="0xFF9900" value=" " />
+			</screen>
+
+			<screen name="SD">
+				<!-- //  -->
+			</screen>
+		</screen_animation>
+
+		<!-- ScreenData for RECALL -->
+		<screen_animation id="recall">
+			<screen name="EWD">
+				<element name="ECAM_text" property="addColorText" color="0xFF9900" value="ELEC GEN 1 FAULT" />
+			</screen>
+
+			<screen name="SD" currentSystem="elec">
+				<element name="GEN1_OFF" property="visible" value="true" />
+			</screen>
+			
+		</screen_animation>
+	</animations>
+	
+	<!-- HERE COMES PARAMETERS FOR GAUGE VELOCITY-->
+	<gauge_velocity>
+		<velocities id="APU_EGTGauge_Velocity">
+			<velocity pointerPosition="1100"  time="10" ease="Linear.easeNone" />
+			<velocity pointerPosition="500" wait="1" time="10" ease="Quadratic.easeOut" />
+		</velocities>
+		
+		<velocities id="DiffPress_Gauge_Velocity">
+			<velocity pointerPosition="10" time="10" ease="Quadratic.easeOut" />
+			<velocity pointerPosition="5" wait="2" time="4" ease="Linear.easeNone" />
+		</velocities>
+		
+		<velocities id="CabinAlt_Gauge_Velocity">
+			<velocity pointerPosition="50" wait="2" time="10" ease="Quadratic.easeIn" />
+			<velocity pointerPosition="5" wait="1" time="10" ease="Linear.easeNone"  />
+			<velocity pointerPosition="45" time="15" ease="Quadratic.easeIn" />
+		</velocities>
+		
+		<velocities id="CabinVS_Gauge_Velocity">
+			<velocity pointerPosition="4000" wait="2" time="10" />
+			<velocity pointerPosition="-4000" wait="1" time="20" ease="Quadratic.easeIn" />
+		</velocities>
+		
+		
+		
+		<velocities id="ALT_vparams">
+			<velocity altPosition="33500" time="10" ease="Quadratic.easeIn" />
+			<velocity altPosition="24000" time="35" ease="Linear.easeNone" xpoint="30000" xelement="xelement_red_fd" />
+			<velocity altPosition="18000" time="10" ease="Quadratic.easeIn" />
+		</velocities>
+		
+		<!-- PFD - EMERGENCY DESCENT, NO DAMAGE, PRESSURISATION OK-->
+<!--		<velocities id="ALT_params">
+			<velocity id="vel1" altPosition="33000" time="20" ease="Quadratic.easeIn" xpoint="33900" xelement="x_element_descent_initiated"/>
+			<velocity id="vel2" wait="0" altPosition="27000" time="82" ease="Linear.easeNone" xpoint="28000" xelement="x_element_crossover_alt"/>
+			<velocity id="vel3"  wait="0" altPosition="11000" time="218" ease="Linear.easeNone" xpoint="11000" xelement="x_element_speed_alt*"/>
+			<velocity id="vel4" wait="0" altPosition="10000" time="30" ease="Quadratic.easeOut" xpoint="10010" xelement="x_element_alt"/>
+		</velocities>	 -->
+		
+	</gauge_velocity>
+</screen_data>

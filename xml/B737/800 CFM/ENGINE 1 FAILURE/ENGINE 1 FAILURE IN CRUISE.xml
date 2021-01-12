@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  ENGINE 1 FAILURE IN CRUISE                     ** -->
+<!-- *********************************************** -->
+
+<site_data>
+	
+	<!-- 1. SETTINGS - Here come some configuration settings that we use for this training! -->
+	<settings>
+		<training name="ENGINE 1 FAILURE IN CRUISE" />
+		<screen_animation file="xml/B737/800 CFM/ENGINE 1 FAILURE/ANIMATION ENGINE 1 FAILURE CRUISE.xml" defaults="xml/B737/SHARED ELEMENTS/DEFAULT PHASES/PHASE CRUISE.xml" />
+		<quick_reference file="xml/B737/SHARED ELEMENTS/QRH/QRH ENGINE FAILURE.xml" />
+		<sound status="on" />
+	</settings>
+	
+	<!-- 2. STATES -->
+	<states>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="default">
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ PRESS PLAY BUTTON(>) TO BEGIN ]]></help_box>
+			<element panel="tl" name="tl1" status="50" />
+			<element panel="tl" name="tl2" status="50" />
+			<!-- Move to new DEFAULT PHASE FILE FOR APU NOT ON IN CRUISE-->
+			<element panel="apu" name="start_switch" status="0" />
+			<element panel="apu" name="egt_gauge" value="0" />			
+			<screen screenID="default" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->->
+		<state id="start">
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... CANCEL  ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="elec_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+			<element panel="electrical3" name="source_bus1_off_light" status="on" />
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="electrical1" />
+		<!-- ANIMATION STEP --> 
+			<screen screenID="start"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="1" >
+		<!-- KEY ACTION -->	
+			<key panel="electrical3" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > A/T... DISCONNECT ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="electrical3" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="1"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="2" >
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > A/T... DISCONNECT ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="electrical3"/>		
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="2"/>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="elec_light" status="on" />
+			<element panel="recall" name="hyd_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+			<element panel="hydraulics_doors" name="hyd_pump_eng1_low_pressure_light" status="on" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="3" >
+		<!-- KEY ACTION -->	
+			<key panel="hydraulics_doors" />
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, electrical3" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > A/T... DISCONNECT ]]></help_box>
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="3"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="4" >
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > A/T... DISCONNECT ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, electrical3" />		
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="4"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="5">
+		<!-- KEY ACTION -->	
+			<key panel="tl" element="disconnect" switch="on" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > A/T... DISCONNECT ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, electrical3" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="5" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="6">
+		<!-- KEY ACTION -->	
+			<key panel="tl" element="disconnect" switch="on" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > THRUST LEVER 1... IDLE ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, electrical3" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="6" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="7">
+		<!-- KEY ACTION -->	
+			<key panel="tl" element="tl1" switch="0" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > ENGINE 1 START LEVER... CUTOFF ]]></help_box> 
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, electrical3" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="7" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="8">
+		<!-- KEY ACTION -->	
+			<key panel="tl" element="engine1_start_lever" switch="cutoff" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ AIR COND > PACK 1... OFF ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, electrical3" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="8" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="9">
+		<!-- KEY ACTION -->	
+			<key panel="pressurisation2" element="l_pack_switch" switch="1" />
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, electrical3" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="9" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="10">
+		<!-- KEY ACTION -->	
+			<key panel="apu" element="start_switch" switch="3" />
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL CONTROL-->
+			<element panel="apu" name="egt_gauge" wait="2" value="800" time="30" />
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, electrical3" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="10" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="11">
+		<!-- KEY ACTION -->	
+			<key panel="pressurisation2" element="l_pack_switch" switch="1" wait="30"/>
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL CONTROL-->
+			<element panel="apu" name="egt_gauge" wait="2" value="400" time="10" />
+			<element panel="electrical3" name="apu_gen_off_bus_light" status="on" />
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, electrical3" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="11" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="12">
+		<!-- KEY ACTION -->	
+			<key panel="electrical3" element="apu_bus1_switch" switch="2" />
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL CONTROL-->
+			<element panel="electrical3" name="apu_gen_off_bus_light" status="off" />
+			<element panel="electrical3" name="source_bus1_off_light" status="off" />
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, electrical3" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="12" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="13">
+		<!-- KEY ACTION -->	
+			<key panel="fuel" element="cross_feed_selector" switch="2" />
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="13" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="14">
+		<!-- KEY ACTION -->	
+			<key panel="fuel" element="fwd_pump2_switch" switch="1" />
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="14" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="15">
+		<!-- KEY ACTION -->	
+			<key panel="fuel" element="aft_pump2_switch" switch="1" />
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="fuel_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+			<element panel="fuel" name="fwd_pump2_low_pressure_light" status="on" />
+			<element panel="fuel" name="aft_pump2_low_pressure_light" status="on" />
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, fuel"/>
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="15" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="16" >
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > A/T... DISCONNECT ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, fuel"/>		
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="16"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="17" >
+		<!-- KEY ACTION -->			
+			<key panel="xpndr" element="dial" switch="1" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > A/T... DISCONNECT ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, fuel"/>		
+		<!-- PANEL ELEMENT CONTROL-->	
+			<element panel="pressurisation2" name="left_duct_pressure" wait="1" time="10" value="0" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="17"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="18">
+		<!-- KEY ACTION -->	
+			<key panel="fuel" element="fwd_pump2_switch" switch="2" />
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, fuel"/>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="fuel" name="fwd_pump2_low_pressure_light" status="off" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="18" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="19">
+		<!-- KEY ACTION -->	
+			<key panel="fuel" element="aft_pump2_switch" switch="2" />
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors, fuel"/>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="fuel" name="aft_pump2_low_pressure_light" status="off" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="19" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="20">
+		<!-- KEY ACTION -->	
+			<key panel="fuel" element="cross_feed_selector" switch="1" />
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="20" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="21">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="recall" switch="off" />
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... CANCEL ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors" />
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="hyd_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="21" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="22">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- HELP BOX -->
+			<help_box completed="yes"><![CDATA[QRH NNC COMPLETE ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="hydraulics_doors"/>	
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="22" />
+		</state>
+<!-- ************************************************** -->		
+	</states>
+	
+</site_data>

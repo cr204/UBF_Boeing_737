@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  BOEING 737 SAMPLE XML                    ** -->
+<!-- *********************************************** -->
+
+<site_data>
+	
+	<!-- 1. SETTINGS - Here come some configuration settings that we use for this training! -->
+	<settings>
+		<training name="BOEING 737 SAMPLE XML" parallel_states="xml/parallel_states1.xml" />
+		<screen_animation file="xml/screen_animation01.xml" defaults="xml/screen_defaults01.xml" />
+		<sound status="on" />
+	</settings>
+	
+	<!-- 2. STATES -->
+	<states>
+		<!-- DEFAULT STATE, before training starts -->
+		<state id="default">
+			<help_box><![CDATA[ PRESS PLAY BUTTON(>) TO BEGIN ]]></help_box>
+			<element panel="elt" name="elt_light" status="on" />
+			<element panel="psue" name="pseu_light" status="on" />
+			<element panel="flt_controls" name="standby_hyd_low_quantity_light" status="on" />
+			<element panel="flt_controls" name="flight_control_light_a" status="on" />
+			<element panel="flt_controls" name="flight_control_light_b" status="on" />
+			<element panel="recall" name="flt_cont_light" status="on" />
+			<element panel="recall" name="apu_light" status="on" />
+			<element panel="recall" name="hyd_light" status="on" />
+			<element panel="recall" name="air_cond_light" status="on" />
+			<element panel="autopilot_test" name="cpt_ap_prst_light" status="on" />
+			<element panel="autopilot_test" name="stab_out_of_trim_light" status="on" />
+			
+			
+			<element panel="fuel" name="filter_bypass_l" status="on" />
+			<element panel="fuel" name="fwd_pump1_low_pressure_light" status="on" />
+			<element panel="fuel" name="cross_feed_valve_open_light" status="dim" />
+			
+			<element panel="navs_and_displays" name="vhf_nav_selector" status="2" />
+			<element panel="hydraulics_doors" name="hyd_pump_elec1_switch" status="2" />
+			<screen screenID="default" />
+		</state>
+		
+		<!-- START STATE, when training starts -->
+		<state id="start">
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... OFF  ]]></help_box>
+			<element panel="elt" name="elt_light" status="off" />
+			<element panel="psue" name="pseu_light" status="off" />
+<!--		<element panel="recall" name="fire_warn" alert="1" /> -->
+			<element panel="recall" name="master_caut" alert="2" />
+			<screen screenID="start"/>
+		</state>
+
+		<!-- Step 1. Master caut -->
+		<state id="1" flightdeck="disable">
+			<key panel="recall" element="master_caut" switch="off" />
+<!--		<key panel="recall" element="fire_warn" switch="off" />  -->
+			<help_box source="ECAM" note="Note: from main XML!"><![CDATA[ FLT CONTROLS > ALTERNATE FLAPS... DOWN ]]></help_box>
+			<info_box1><![CDATA[ INFO BOX 1 TEXT ]]></info_box1>
+			<info_box2 gotoFrame="2"><![CDATA[ INFO BOX 2 TEXT ]]></info_box2>
+			<screen name="ecam" screenID="1"/>
+		</state>
+
+		<!-- Step 2 -->
+		<state id="2">
+			<key panel="flt_controls" element="alternate_flaps_toggle_switch" switch="3" />
+<!--			<key panel="recall" element="capt_recall" switch="off" />  -->
+<!--			<key panel="tl" element="tl1" switch="IDLE" /> -->
+			<help_box source="QRH"><![CDATA[ NAVS AND DISPLAYS > VHF NAV SELECTOE... ON 1 ]]></help_box>
+			<element panel="recall" name="flt_cont_light" status="off" />
+			<element panel="recall" name="apu_light" status="off" />
+			<element panel="recall" name="irs_light" status="on" />
+			<element panel="recall" name="fuel_light" status="on" />
+			<element panel="fuel" name="cross_feed_valve_open_light" status="on" />
+			<screen name="ecam" screenID="2" />
+		</state>
+		
+		<!-- Step 3 -->
+		<state id="3">
+			<key panel="navs_and_displays" element="vhf_nav_selector" switch="1" />
+			<help_box source="SOPS"  note="Note: from main XML!"><![CDATA[ DOME WHITE > SWITCH... BRIGHT ]]></help_box>
+			<screen name="ecam" screenID="3" />
+			<additional screen="c_press, bleed, cond" />
+		</state>
+
+		<!-- Step 4 -->
+		<state id="4">
+			<key panel="dome_white" element="dome_white_switch" switch="3" />
+			<help_box completed="yes"><![CDATA[ECAM ACTIONS COMPELETE ]]></help_box>
+			<screen name="ecam" screenID="4" />
+		</state>
+		
+	</states>
+	
+</site_data>

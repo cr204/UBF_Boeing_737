@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<screen_data>
+	<settings>
+		<parallel_animations file="xml/parallel_animations01.xml" />
+	</settings>
+	<animations>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<screen_animation id="default">
+			<!-- No Changes to the Screens-->	
+		</screen_animation>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<screen_animation id="start">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<screen_animation id="1">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<screen_animation id="2">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<screen_animation id="3">
+			<!-- No Changes to the Screens-->	
+		</screen_animation>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<screen_animation id="4">
+			<!-- No Changes to the Screens-->			
+		</screen_animation>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<screen_animation id="5">
+			<!-- No Changes to the Screens-->			
+		</screen_animation>		
+		
+	</animations>
+</screen_data>
+

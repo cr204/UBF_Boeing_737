@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  FLIGHT RECORDER OFF IN CRUISE            ** -->
+<!-- *********************************************** -->
+
+<site_data>
+	
+	<!-- 1. SETTINGS - Here come some configuration settings that we use for this training! -->
+	<settings>
+		<training name="FLIGHT RECORDER OFF IN CRUISE" />
+		<screen_animation file="xml/B737/800 CFM/FLIGHT RECORDER OFF/ANIMATION FLIGHT RECORDER OFF.xml" defaults="xml/B737/SHARED ELEMENTS/DEFAULT PHASES/PHASE CRUISE.xml" />
+		<quick_reference file="xml/B737/SHARED ELEMENTS/QRH/QRH FLIGHT RECORDER OFF.xml" />  
+		<sound status="on" />
+	</settings>
+	
+	<!-- 2. STATES -->
+	<states>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="default">
+			<help_box><![CDATA[ PRESS PLAY BUTTON(>) TO BEGIN ]]></help_box>
+			<screen screenID="default" />
+		</state>
+<!-- ************************************************** -->		
+		<!-- STEP NUMBER -->
+		<state id="start">
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ OVERHEAD PANEL > CONFIRM FAULT ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="overhead_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+			<element panel="irs_system_display" name="dc_fail_l_light" status="on" />
+		<!-- ANIMATION STEP -->
+			<screen screenID="start"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="1" >
+		<!-- KEY ACTION -->	
+			<key panel="irs_system_display" />
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... CANCEL  ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="irs_system_display" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="1"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="2">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ CHECK QRH > NNC FLIGHT INSTRUMENTS/DISPLAYS ]]></help_box>
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="2" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="3">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="recall" switch="off" />
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="irs_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="3" />
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="4">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="recall" switch="off" />
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... CANCEL ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="irs_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="4" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="5">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- HELP BOX -->
+			<help_box completed="yes"><![CDATA[QRH NNC COMPLETE ]]></help_box>
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="5" />
+		</state>
+<!-- ************************************************** -->		
+	</states>
+	
+</site_data>

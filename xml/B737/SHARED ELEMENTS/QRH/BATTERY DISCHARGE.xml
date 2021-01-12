@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<main title= "QUICK REFERENCE HANDBOOK">
+	<sub title= "BATTERY DISCHARGE">
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>Condition: <font size="14">A battery discharge exceedance occurs</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<b><font size="14">Note:</b><font size="12"> Fully charged batteries supply a minimum of 60 minutes of standby power.</b></font>]]>
+				</displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="16"><b>                                     ■ ■ ■ ■</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+		</sub>
+</main>

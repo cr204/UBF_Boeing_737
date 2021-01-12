@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  SCREEN ELEMENTS DEFAULT VALUES           ** -->
+<!-- *********************************************** -->
+
+<screen_data>
+	<default_values>
+		<!-- Default element values for - UDU -->
+		<screen name="UDU">
+			
+			<element name="eng1_n1_gauge" property="pointerPosition" value="110" />
+			<element name="eng2_n1_gauge" property="pointerPosition" value="30" />
+			
+			<element name="eng1_egt_gauge" property="pointerPosition" value="800" />
+			<element name="eng2_egt_gauge" property="pointerPosition" value="100" />
+			
+			<element name="eng1_fuel_gauge" property="pointerPosition" value="3000" />
+			<element name="fuel_gauge" color="amber" />
+			<element name="eng2_fuel_gauge" property="pointerPosition" value="2000" />
+			<element name="fuel_gauge" property="pointerPosition" value="4000" />
+			
+			<element name="eng1_rev" property="visible" value="false" />
+			<element name="eng2_tai" property="visible" value="false" />
+			<!-- // -->
+			<panel_element name="no_smoking_switch" panel="emerg_exit" status="3" />
+			<panel_element name="seat_belts_switch" panel="emerg_exit" status="2" />
+			
+			<panel_element name="hyd_pump_eng1_switch" panel="hydraulics_doors" status="2" />
+			<panel_element name="hyd_pump_elec1_switch" panel="hydraulics_doors" status="2" />
+			
+			<panel_element name="ignition_switch" panel="engine_start" status="2" />
+			<panel_element name="standby_hyd_low_pressure_light" panel="flt_controls" status="on" />
+			
+			<panel_element name="auto_fail_light" panel="pressurisation3" status="on" />
+			<panel_element name="off_sched_descent_light" panel="pressurisation3" status="on" />
+			<panel_element name="altn_light" panel="pressurisation3" status="on" />
+			<panel_element name="manual_light" panel="pressurisation3" status="on" />
+			<panel_element name="le_flaps_transit_light" panel="flap_indicator" status="on" />
+			
+			<panel_element name="nt" panel="mcp" status="on" />
+			<panel_element name="at" panel="mcp" status="2" />
+			<panel_element name="fd1" panel="mcp" status="2" />
+			
+			<panel_element panel="pressurisation2" name="right_duct_pressure" value="10" />
+			<panel_element panel="pressurisation2" name="left_duct_pressure" value="30" />
+			
+			<panel_element panel="electrical2" name="drive1_disconnect_switch" status="1" />
+
+		</screen>
+		
+		<!-- Default element values for LDU -->
+		<screen name="LDU">
+			<element name="eng1_n2_gauge" property="pointerPosition" value="105" />
+			<element name="eng2_n2_gauge" property="pointerPosition" value="50" />
+			
+			<element name="eng1_oil_press" property="pointerPosition" value="10" />
+			<element name="eng2_oil_press" property="pointerPosition" value="80" />
+			
+			<element name="eng1_oil_temp" property="pointerPosition" value="120" />
+			<element name="eng2_oil_temp" property="pointerPosition" value="165" />
+			
+			<element name="eng1_vib" property="pointerPosition" value="1" />
+			<element name="eng2_vib" property="pointerPosition" value="4.5" />
+			
+			<element name="eng1_oil_qty" property="pointerPosition" value="15" />
+			<element name="eng2_oil_qty" property="pointerPosition" value="3" />
+			
+			<element name="blank_screen" property="visible" value="false" />
+			<!-- // -->
+		</screen>		
+			
+		
+		<!--  ******************************************** -->
+		<!--  Screen PFD/ND                                -->
+		 
+		
+		<!-- Default element values for CAPT PFD screen -->
+		<screen name="CAPT_PFD">
+			<element name="speed_tape" property="iasPosition" value="320" />
+			<element name="speed_bug" property="iasPosition" value="340" />
+			
+			<element name="altimeter_tape" property="altPosition" value="36500" />
+			<element name="vsi" property="pointerPosition" value="0" />
+			
+			<element name="alt" property="visible" value="false" />
+			<element name="spd_lim" property="visible" value="true" />
+			
+			<element name="compass" property="pointerPosition" value="5" />
+			
+		</screen>
+		
+		<!-- Default element values for CAPT ND screen -->
+		<screen name="CAPT_ND">
+			<!-- // -->
+		</screen>
+		
+		<!-- Default element values for FO PFD screen -->
+		<screen name="FO_PFD">
+			<!-- // -->
+		</screen>
+		
+		<!-- Default element values for FO ND screen -->
+		<screen name="FO_ND">
+			<!-- // -->
+		</screen>
+		
+	</default_values>
+</screen_data>

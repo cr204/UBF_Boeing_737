@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  SCREEN ELEMENTS DEFAULT VALUES           ** -->
+<!-- *********************************************** -->
+
+<screen_data>
+	<default_values>
+		<!-- Default element values for - UDU -->
+		<screen name="UDU">
+			
+			<element name="eng1_n1_gauge" property="pointerPosition" value="110" />
+			<element name="eng2_n1_gauge" property="pointerPosition" value="30" />
+			
+			<element name="eng1_egt_gauge" property="pointerPosition" value="800" />
+			<element name="eng2_egt_gauge" property="pointerPosition" value="100" />
+			
+			<element name="eng1_fuel_gauge" property="pointerPosition" value="3000" />
+			<element name="eng2_fuel_gauge" property="pointerPosition" value="2000" />
+			<element name="fuel_gauge" property="pointerPosition" value="4000" />
+			<!-- // -->
+			<panel_element name="elt_light" panel="elt" status="on" />
+			<panel_element name="alternate_flaps_toggle_switch" panel="flt_controls" status="2" />
+		</screen>
+		
+		<!-- Default element values for LDU -->
+		<screen name="LDU">
+			<element name="eng1_n2_gauge" property="pointerPosition" value="105" />
+			<element name="eng2_n2_gauge" property="pointerPosition" value="50" />
+			
+			<element name="eng1_oil_press" property="pointerPosition" value="10" />
+			<element name="eng2_oil_press" property="pointerPosition" value="80" />
+			
+			<element name="eng1_oil_temp" property="pointerPosition" value="120" />
+			<element name="eng2_oil_temp" property="pointerPosition" value="165" />
+			
+			<element name="eng1_vib" property="pointerPosition" value="1" />
+			<element name="eng2_vib" property="pointerPosition" value="4.5" />
+			
+			<element name="eng1_oil_qty" property="pointerPosition" value="15" />
+			<element name="eng2_oil_qty" property="pointerPosition" value="3" />
+			<!-- // -->
+		</screen>		
+			
+		
+		<!--  ******************************************** -->
+		<!--  Screen PFD/ND                                -->
+		 
+		
+		<!-- Default element values for CAPT PFD screen -->
+		<screen name="CAPT_PFD">
+			<!-- // -->
+		</screen>
+		
+		<!-- Default element values for CAPT ND screen -->
+		<screen name="CAPT_ND">
+			<!-- // -->
+		</screen>
+		
+		<!-- Default element values for FO PFD screen -->
+		<screen name="FO_PFD">
+			<!-- // -->
+		</screen>
+		
+		<!-- Default element values for FO ND screen -->
+		<screen name="FO_ND">
+			<!-- // -->
+		</screen>
+		
+	</default_values>
+</screen_data>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  ENGINE COWL ANTI-ICE                            ** -->
+<!-- *********************************************** -->
+
+<site_data>
+	
+	<!-- 1. SETTINGS - Here come some configuration settings that we use for this training! -->
+	<settings>
+		<training name="ENGINE COWL ANTI-ICE IN CRUISE" />
+		<screen_animation file="xml/B737/800 CFM/ENGINE COWL ANTI-ICE/ANIMATION ENGINE COWL ANTI-ICE IN CRUISE.xml" defaults="xml/B737/SHARED ELEMENTS/DEFAULT PHASES/PHASE CRUISE.xml" />
+		<quick_reference file="xml/B737/SHARED ELEMENTS/QRH/ENGINE COWL ANTI-ICE.xml" />
+		<sound status="on" />
+	</settings>
+	
+	<!-- 2. STATES -->
+	<states>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="default">
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ PRESS PLAY BUTTON(>) TO BEGIN ]]></help_box>
+		<!-- ANIMATION STEP -->
+			<screen screenID="default" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="start">
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ ANTI ICE > REDUCE COWL DUCT PRESS ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="anti_ice_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+			<highlight panel="anti_ice2" />
+			<element panel="anti_ice2" name="cowl_anti_ice1_light" status="on" />
+		<!-- ANIMATION STEP -->
+			<screen screenID="start"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="1" >
+		<!-- KEY ACTION -->	
+			<key panel="anti_ice2" />
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... CANCEL  ]]></help_box>
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="1"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="2">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ AUTOTHROTTLE > IF ENGAGE... DISENGAGE ]]></help_box>
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="2" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="3">
+		<!-- KEY ACTION -->	
+			<key panel="tl" element="disconnect" switch="on" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > A/T... DISCONNECT ]]></help_box>
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="3" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="4">
+		<!-- KEY ACTION -->	
+			<key panel="tl" element="disconnect" switch="on" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > THRUST LEVER 1... IDLE ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<!--<element panel="anti_ice_panel_2" name="cowl_anti_ice1_light" status="off" />-->
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="4" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="5">
+		<!-- KEY ACTION -->	
+			<key panel="tl" element="tl1" switch="0" />
+		<!-- HELP BOX -->
+			<help_box source="QRH"><![CDATA[ THRUST LEVERS > ENGINE 1 START LEVER... CUTOFF ]]></help_box> 
+		<!-- PANEL ELEMENT CONTROL -->	
+			<!--<element panel="anti_ice_panel_2" name="cowl_anti_ice1_light" status="off" />-->
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="5" />
+		</state>
+<!-- ************************************************** -->	
+		<!-- STEP NUMBER -->
+		<state id="6">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="recall" switch="off" />
+		<!-- HELP BOX -->
+			<help_box completed="yes"><![CDATA[QRH ACTIONS COMPELETE ]]></help_box>
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="6" />
+		</state>
+<!-- ************************************************** -->		
+	</states>
+	
+</site_data>

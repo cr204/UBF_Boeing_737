@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  APU DET INOP IN CRUISE                   ** -->
+<!-- *********************************************** -->
+
+<site_data>
+	
+	<!-- 1. SETTINGS - Here come some configuration settings that we use for this training! -->
+	<settings>
+		<training name="APU DET INOP IN CRUISE" />
+		<screen_animation file="xml/B737/800 CFM/APU DET INOP/ANIMATION APU DET INOP IN CRUISE.xml" defaults="xml/B737/SHARED ELEMENTS/DEFAULT PHASES/PHASE CRUISE.xml" />
+		<quick_reference file="xml/B737/SHARED ELEMENTS/QRH/QRH APU DET INOP.xml" /> 
+		<sound status="on" />
+	</settings>
+	
+	<!-- 2. STATES -->
+	<states>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="default">
+			<help_box><![CDATA[ PRESS PLAY BUTTON(>) TO BEGIN ]]></help_box>
+			<element panel="apu" name="start_switch" state="2" />
+			<screen screenID="default" />
+		</state>
+<!-- ************************************************** -->		
+		<!-- STEP NUMBER -->
+		<state id="start">
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ APU > CONFIRM FAULT ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="apu_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+			<element panel="apu" name="apu_fault_light" status="on" />
+		<!-- ANIMATION STEP -->
+			<screen screenID="start"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="1" >
+		<!-- KEY ACTION -->	
+			<key panel="apu" />
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... CANCEL  ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="apu" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="1"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="2">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- HELP BOX -->
+			<help_box source="QRH" note="Note: Do not run the APU - the APU would continue to run in case of fire"><![CDATA[ APU > APU SWITCH... OFF ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="apu" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="2" />
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="3">
+		<!-- KEY ACTION -->	
+			<key panel="apu" element="start_switch" switch="1" />
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="apu" name="apu_fault_light" status="off" />
+			<element panel="apu" name="egt_gauge" value="0" />
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="apu" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="3" />
+		</state>
+<!-- ************************************************** -->	
+		<!-- STEP NUMBER -->
+		<state id="4">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="recall" switch="off" />
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... CANCEL  ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="apu_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="apu" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="4" />
+		</state>
+<!-- ************************************************** -->		
+		<!-- STEP NUMBER -->
+		<state id="5">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- HELP BOX -->
+			<help_box completed="yes"><![CDATA[ QRH NNC COMPLETE ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="apu" name="apu_fault_light" status="off" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="5" />
+		</state>
+	</states>
+	
+</site_data>

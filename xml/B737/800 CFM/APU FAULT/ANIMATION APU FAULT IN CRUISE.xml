@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<screen_data>
+	<settings>
+		<!-- No Parallel File required-->
+	</settings>
+	<animations>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<screen_animation id="default">
+			<!-- No Changes to the Screens-->	
+		</screen_animation>
+<!-- ************************************************** -->		
+		<!-- STEP NUMBER -->
+		<screen_animation id="start">
+			<screen name="UDU">
+				   <panel_element panel="apu" name="egt_gauge" wait="3" value="100" time="10" ease="Quadratic.easeOut" />
+			</screen>
+		</screen_animation>
+<!-- ************************************************** -->		
+		<!-- STEP NUMBER -->
+		<screen_animation id="1">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<screen_animation id="2">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<screen_animation id="3">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+<!-- ************************************************** -->		
+		<!-- STEP NUMBER -->
+		<screen_animation id="4">
+			<!-- No Changes to the Screens-->
+		</screen_animation>
+<!-- ************************************************** -->	
+	</animations>
+</screen_data>

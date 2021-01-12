@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<main title= "QUICK REFERENCE HANDBOOK">
+	<sub title= "ENGINE FAILURE OR SHUTDOWN">
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>Condition: <font size="14">One of these occurs:</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12">                            ■ An engine failure <br>                            ■ An ENG FAIL alert shows <br>                            ■ An engine flameout <br>                            ■ Another checklist directs an engine shutdown.</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">1 Do an engine shutdown only when flight conditions 	allow.</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">2 Autothrottle (if engaged) . . . . . . . . . . .Disengage</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">3 Thrust lever <br> (affected engine) . . . . . . Confirm . . . . . . . Close</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">4 <b>If</b> conditions allow:<br>           Run the engine for three minutes at idle thrust.</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">5 Engine start lever<br>           (affected engine) . . . . . . Confirm . . . . . CUTOFF</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">6 PACK switch (affected side) . . . . . . . . . . . . . OFF</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">This causes the operating pack to regulate to high flow in flight with flaps up.</font>]]></displaydata>
+				<tables></tables>
+			</para>	
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">7 Choose one:</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">         ■ APU is available for start:</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">               APU . . . . . . . . . . . . . . . . . . . . . . START</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">               <b>When</b> APU is running: <br>                       APU GEN switch <br>              (affected side) . . . . . . . . . . . . .ON</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">               <b>►►Go to step 8</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">         ■ APU is <b>not</b> available:</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">               <b>►►Go to step 8</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">8 Balance fuel as needed.</font>]]></displaydata>
+				<tables></tables>
+			</para>	
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">9 Transponder mode selector . . . . . . . . . . . . . . TA</font>]]></displaydata>
+				<tables></tables>
+			</para>	
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">        This prevents climb commands which can exceed single engine performance capability.</font>]]></displaydata>
+				<tables></tables>
+			</para>	
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">10 Transponder mode selector . . . . . . . . . . TA ONLY</font>]]></displaydata>
+				<tables></tables>
+			</para>	
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">        This prevents climb commands which can exceed single engine performance capability.</font>]]></displaydata>
+				<tables></tables>
+			</para>	
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">11 <b>If</b> wing anti–ice is needed:</font>]]></displaydata>
+				<tables></tables>
+			</para>	
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">        ISOLATION VALVE switch . . . . . . . . . . . AUTO</font>]]></displaydata>
+				<tables></tables>
+			</para>	
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">12 Plan to land at the nearest suitable airport.</font>]]></displaydata>
+				<tables></tables>
+			</para>	
+			<para style="text">
+				<displaydata><![CDATA[<font size="14"><b> ►►Go to the One Engine Inoperative Landing checklist on page 7.26</b></font>]]></displaydata>
+				<tables></tables>
+			</para>	
+			<para style="text">
+				<displaydata><![CDATA[<font size="16"><b>                                     ■ ■ ■ ■</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+		</sub>
+</main>

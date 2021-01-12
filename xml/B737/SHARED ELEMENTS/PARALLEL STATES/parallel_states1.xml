@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<additional_data>
+
+	<!-- 3. PARALLEL STATES -->
+	<parallel_states>
+		
+		<!-- Parallel state 1 -->
+		<parallel_state id="1" note="Note: APU is available to start">
+<!--			<key panel="services" element="apu_master_switch" switch="on" />  -->
+<!-- 			<key panel="services" element="apu_master_switch" switch="off" o_screen="bleed" o_element="PACK1_FLOW" o_value="+75" />  -->
+			<key panel="services" element="apu_master_switch" switch="off" c_screen="CAPT_PFD" c_element="altimeter_tape" c_value="+30000" />
+			<screen screenID="p_masterSW" />
+		</parallel_state>
+		
+		<!-- Parallel state 2 -->
+		<parallel_state id="2" note="Note: APU is available to start">
+			<key panel="services" element="apu_start" switch="on" />
+			<screen screenID="p_start" />
+		</parallel_state>
+		
+		<!-- Parallel state 3. Added aug 15, 2011 to test multiple parallel states-->
+		<parallel_state id="3" note="Note: APU is available to start">
+			<key panel="services" element="nav_logo" switch="2" />
+			<screen screenID="p_3" />
+		</parallel_state>
+		
+		<!-- Parallel state 4. Added aug 15, 2011 to test multiple parallel states-->
+		<parallel_state id="4" note="Note: APU is available to start">
+			<key panel="services" element="nose" switch="2" />
+			<screen screenID="p_3" />
+		</parallel_state>
+		
+	</parallel_states>
+
+
+</additional_data>

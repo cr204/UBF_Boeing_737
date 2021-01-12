@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  SCREEN ELEMENTS DEFAULT VALUES           ** -->
+<!-- *********************************************** -->
+
+<screen_data>
+	<default_values>
+		<!-- Default element values for - SCREEN EWD -->
+		<screen name="EWD">
+			<panel_element panel="hydraulics_doors" name="hyd_pump_elec1_switch" status="2" />
+			<panel_element panel="hydraulics_doors" name="hyd_pump_elec1_switch" property="gotoFrame" value="2" />
+			<element name="eng1_epr_amber_cover" property="visible" value="false" />`
+			<element name="eng2_epr_amber_cover" property="visible" value="false" />
+			<element name="eng1_egt_amber_cover" property="visible" value="false" />
+			<element name="eng2_egt_amber_cover" property="visible" value="false" />
+			<element name="eng1_n1_amber_cover" property="visible" value="false" />
+			<element name="eng2_n1_amber_cover" property="visible" value="false" />
+			<element name="eng1_n2_amber_cover" property="visible" value="false" />
+			<element name="eng2_n2_amber_cover" property="visible" value="false" />
+		
+			<element name="eng1_n2" property="pointerPosition" value="86.6" />
+			<element name="eng2_n2" property="pointerPosition" value="87.4" />
+			
+			<element name="EPR_RATING_LIMIT" property="text" value="1.421" />
+			<element name="N1_mode" property="visible" value="false" />
+			
+			<element name="FOB_amber_half_box" property="visible" value="false" />
+			<element name="eng1_n1_gauge.donut" property="visible" value="false" />
+			<element name="eng2_n1_gauge.donut" property="visible" value="false" />
+			
+			
+			<element name="THRUST_LIMIT_MODE" property="gotoFrame" value="2" />
+			
+			<element name="eng1_FUEL_FLOW" property="pointerPosition" value="1160" />
+			<element name="eng2_FUEL_FLOW" property="pointerPosition" value="1160" />
+			<element name="FOB" property="text" value="3540" />
+			<element name="sts" property="visible" value="true" />
+		</screen>
+		
+		<!-- Default element values for SD screen system - CRUISE -->
+		<screen name="SD" system="cruise">
+			<element name="LDG_ELEV_AUTO_MAN" property="gotoFrame" value="2" />
+			<element name="LDG_ELEV_FT" property="visible" value="false" />
+			<element name="CKPT_TEMP" property="text" value="24" />
+			<element name="FWD_CABIN_TEMP" property="text" value="23" />
+			<element name="AFT_CABIN_TEMP" property="text" value="23" />
+		</screen>		
+			
+		<!-- Default element values for SD screen system - ELEC -->
+		<screen name="SD" system="elec">
+			<element name="AC_BUS1_TO_TR1_LINE" property="gotoFrame" value="2" />
+			<element name="AC_BUS2_TO_TR2_LINE" property="gotoFrame" value="2" />
+			<element name="APU_GEN_OFF" property="visible" value="false" />
+			<element name="APU_NOT_AVAIL" property="visible" value="false" />
+		</screen>
+
+		<!-- Default element values for SD screen system - STATUS -->
+		<screen name="SD" system="status">
+			
+		</screen>
+	
+		<!-- Default element values for SD screen system - APU -->
+		<screen name="SD" system="apu">
+				
+				
+				<element name="N1_gauge" property="pointerPosition" value="0" />
+				<element name="EGT_gauge" property="pointerPosition" value="10" />
+				
+				<element name="GEN_GREEN_ARROW" property="visible" value="false" />
+				<element name="BLEED_GREEN_ARROW" property="visible" value="false" />
+				<element name="GEN_COVER" property="visible" value="false" />
+				<element name="GEN_FREQUENCY_AMBER_COVER" property="visible" value="false" />
+				
+				<element name="APU_GEN_TEXT_WHITE" property="gotoFrame" value="2" />
+				<element name="BLEED_VALVE" property="gotoFrame" value="3" />
+				
+<!--				<panel_element name="spd_mach" panel="fcu" property="gotoFrame" value="2" />  -->
+
+		</screen>
+
+		<!-- Default element values for SD screen system - BLEED -->
+		<screen name="SD" system="bleed">
+			
+		</screen>
+		
+		<!-- Default element values for SD screen system - CABINPRESS -->
+		<screen name="SD" system="cabinpress">
+			
+			<element name="CABIN_PSI" property="pointerPosition" value="0" />
+			<element name="CABIN_VS" property="pointerPosition" value="0" />
+			<element name="CABIN_ALT" property="pointerPosition" value="0" />
+			<element name="OUTFLOW_VALVE_POSITION" property="pointerPosition" value="0" />
+			
+		</screen>
+
+		<!-- Default element values for SD screen system - COND -->
+		<screen name="SD" system="cond">
+			
+		</screen>
+
+		<!-- Default element values for SD screen system - DOOR -->
+		<screen name="SD" system="door">
+			<element name="OXYGEN_PRESSURE" property="text" value="1000" />
+		</screen>
+
+		<!-- Default element values for SD screen system - ENGINE -->
+		<screen name="SD" system="engine">
+			
+			<element name="ENG1_OIL_QUANTITY" property="pointerPosition" value="21.0" />
+			<element name="ENG2_OIL_QUANTITY" property="pointerPosition" value="20.5" />
+			
+			<element name="ENG1_OIL_PRESSURE" property="pointerPosition" value="250" />
+			<element name="ENG2_OIL_PRESSURE" property="pointerPosition" value="252" />
+
+			<element name="ENG1_OIL_TEMP" property="pointerPosition" value="160" />
+			<element name="ENG2_OIL_TEMP" property="pointerPosition" value="165" />
+			
+			<element name="FUEL_USED_ENG1" property="text" value="1720" />
+			<element name="FUEL_USED_ENG2" property="text" value="1720" />
+
+<!--			<element name="ENG1_N1_VIBRATION" property="pointerPosition" value="5.1" />
+			<element name="ENG2_N1_VIBRATION" property="pointerPosition" value="5.4" />
+			<element name="ENG1_N2_VIBRATION" property="pointerPosition" value="5.5" />
+			<element name="ENG2_N2_VIBRATION" property="pointerPosition" value="5.7" />  -->
+			
+			<element name="FUEL_USED_ENG1_AMBER_LINE" property="visible" value="false" />
+			<element name="FUEL_USED_ENG2_AMBER_LINE" property="visible" value="false" />
+			<element name="engine_ignition" property="visible" value="false" />
+<!--			<element name="ENG1_NACELLE_TEMP" property="visible" value="false" />
+			<element name="ENG2_NACELLE_TEMP" property="visible" value="false" /> -->
+			<element name="NACELLE_TEMP_TEXT_AND_LINES" property="visible" value="false" />
+			
+		</screen>
+
+		<!-- Default element values for SD screen system - FCTL -->
+		<screen name="SD" system="fctl">
+			<element name="PITCH_TRIM" property="text" value="1.5" />
+			
+			<element name="RUDDER_POSITION" property="gotoFrame" value="2" />
+			<element name="RUDDER_POSITION" property="pointerPosition" value="30" />
+			
+			<element name="RUDDER_TRIM" property="pointerPosition" value="-45" />
+			
+		</screen>
+
+		<!-- Default element values for SD screen system - FUEL -->
+		<screen name="SD" system="fuel">
+			
+			<element name="LEFT_OUTER" property="text" value="100" color="0xFF9900" />
+			<element name="LEFT_INNER" property="text" value="200" color="0xFF9900" />
+			<element name="RIGHT_INNER" property="text" value="300" color="0xFF9900" />
+			<element name="RIGHT_OUTER" property="text" value="400" color="0xFF9900" />
+			
+		</screen>
+
+		<!-- Default element values for SD screen system - HYD -->
+		<screen name="SD" system="hyd">
+			
+			<element name="g_hyd_quantity" property="position" value="0" />
+			<element name="b_hyd_quantity" property="position" value="50" />
+			<element name="b_hyd_quantity" property="gotoFrame" value="2" />
+			<element name="y_hyd_quantity" property="position" value="100" />
+			
+			<element name="g_hyd_quantity" property="visible" value="false" />
+			<element name="b_hyd_quantity" property="visible" value="false" />
+			<element name="y_hyd_quantity" property="visible" value="false" />
+
+			<element name="b_pressure_line3" property="visible" value="false" />			
+			
+
+			
+			
+			
+		</screen>
+
+		<!-- Default element values for SD screen system - WHEEL -->
+		<screen name="SD" system="wheel">
+			<element name="arc1" property="visible" value="false" />
+			<element name="arc2" property="visible" value="false" />
+			<element name="arc3" property="gotoFrame" value="2" />
+			<element name="arc4" property="gotoFrame" value="2" />
+		</screen>
+		
+		<!-- Default element values for SD screen bottom -->
+		<screen name="SD_bottom">
+				<element name="TAT_AMBER_COVER" property="visible" value="false" />
+				<element name="SAT_AMBER_COVER" property="visible" value="false" />
+				<element name="CLOCK_AMBER_COVER" property="visible" value="false" />
+				
+		</screen>
+	
+	
+		
+		<!--  ******************************************** -->
+		<!--  Screen PFD/ND                                -->
+		 
+		
+		<!-- Default element values for CAPT PFD screen -->
+		<screen name="CAPT_PFD">
+			<element name="spd_sel_red_warning" property="visible" value="false" />
+			<element name="alt_sel_red_warning" property="visible" value="false" />
+			<element name="spd_red_cover" property="visible" value="false" />
+			<element name="att_red_cover" property="visible" value="false" />
+			<element name="alt_red_cover" property="visible" value="false" />
+			<element name="hdg_red_cover" property="visible" value="false" />
+			<element name="pressure_setting" property="visible" value="false" />
+			
+			<element name="red_ra" property="visible" value="false" />
+			<element name="rad_alt" property="visible" value="false" />
+<!--			<element name="rad_alt" property="text" value="1000" />  -->
+			
+			<element name="ils" property="visible" value="false" />
+			<element name="di" property="diPosition" value="2.2" />
+			<element name="altimeter_tape" property="altPosition" value="34500" />
+			<element name="altitude_marker" property="position" value="34500" />
+			
+		</screen>
+		
+		<!-- Default element values for CAPT ND screen -->
+		<screen name="CAPT_ND">
+			<element name="hdg_red_cover" property="visible" value="false" />
+			<element name="tas_green_dashes" property="visible" value="false" />
+			
+		</screen>
+		
+		<!-- Default element values for FO PFD screen -->
+		<screen name="FO_PFD">
+			<element name="spd_sel_red_warning" property="visible" value="false" />
+			<element name="alt_sel_red_warning" property="visible" value="false" />
+			<element name="spd_red_cover" property="visible" value="false" />
+			<element name="att_red_cover" property="visible" value="false" />
+			<element name="alt_red_cover" property="visible" value="false" />
+			<element name="hdg_red_cover" property="visible" value="false" />
+			<element name="ils" property="visible" value="false" />
+<!--			<element name="pressure_setting" property="visible" value="false" />  -->
+		</screen>
+		
+		<!-- Default element values for FO ND screen -->
+		<screen name="FO_ND" gotoFrame="2">
+			<element name="hdg_red_cover" property="visible" value="false" />
+			<element name="tas_green_dashes" property="visible" value="false" />
+		</screen>
+		
+	</default_values>
+</screen_data>

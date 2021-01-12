@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  PARALLEL STATE SCREEN ANIMATIONS         ** -->
+<!-- *********************************************** -->
+
+<additional_screen_data>
+	
+	<parallel_states>
+		<!-- ScreenData for Parallel State: MASTER SW -->
+		<screen_animation id="p_masterSW">
+			<screen name="EWD">
+				<!-- //  -->
+			</screen>
+	
+			<screen name="SD" defaultSystem="apu">
+				<element name="GEN_COVER" wait="1" property="visible" value="false" />
+				<element name="GEN_FREQUENCY_AMBER_COVER" wait="1" property="visible" value="false" />
+				<element name="AVAIL" property="visible" value="false" />
+				<element name="N1_AMBER_COVER" wait="1" property="visible" value="false" />
+				<element name="EGT_AMBER_COVER" wait="1" property="visible" value="false" />
+				<element name="BLEED_AMBER_COVER" wait="1" property="visible" value="false" />
+				<element name="FUEL_LO_PR" property="visible" value="false" />
+				<element name="FLAP_OPEN" property="visible" value="false" />
+				<element name="LOW_OIL_LEVEL" property="visible" value="false" />
+				
+				<element name="APU_GEN_LOAD" property="text" value="0" />
+				<element name="APU_GEN_VOLTAGE" property="text" value="1" />
+				<element name="APU_GEN_FREQUENCY" property="text" value="1" />
+				
+				<element name="APU_GEN_LOAD" property="pointerPosition" value="100" />
+
+			</screen>
+			
+			<screen name="SD" updateSystem="fctl">
+				<element name="RUDDER_POSITION_AMBER_COVER" property="visible" value="false" />
+				<element name="RUDDER_POSITION" wait="1" property="gotoFrame" value="2" />
+				
+				<panel_element panel="fcu" name="spd" property="showNumber" value="0.35" />
+				<panel_element panel="elec" name="gen2" fault="1" />
+
+			</screen>
+			
+		</screen_animation>
+
+		<!-- ScreenData for Parallel State: START -->
+		<screen_animation id="p_start">
+			<screen name="EWD">
+				<!-- //  -->
+			</screen>
+	
+			<screen name="SD" defaultSystem="apu">
+				<xelement id="x_element1" name="N1_gauge" property="gaugeVelocityID" value="N1_params" />
+				<element name="EGT_gauge" property="gaugeVelocityID" value="EGT_params" />
+<!--				<element name="EGT_gauge" wait="3" property="pointerPosition" value="800" time="6" ease="Quadratic.easeOut" xpoint="600" xelement="x_element1, x_element2" />  -->
+<!--				<element name="EGT_gauge" property="update_CAUTION_EGT_pointer" wait="1" value="700" time="4" />
+				<element name="EGT_gauge" property="update_MAX_EGT_pointer" wait=".5" value="700" time="5" />   -->
+
+				<xelement id="x_element2" name="FLAP_OPEN" property="visible" value="true" />
+				<xelement id="x_element3" name="screen" wait="1" property="defaultSystem" value="cruise" />
+				
+			</screen>
+			
+			<screen name="SD" updateSystem="fuel">
+				<element name="FOB" property="text" value="1000" />
+				<element name="X_FEED_VALVE" wait="1" property="gotoFrame" value="3" />
+			</screen>
+			
+		</screen_animation>
+	
+		<!-- ScreenData for Parallel State: START -->
+		<screen_animation id="p_3">
+			<screen name="EWD">
+				<!-- // -->
+			</screen>
+			
+			<screen name="SD">
+				<!-- // -->
+			</screen>
+		</screen_animation>
+		
+	</parallel_states>
+	
+	<!-- HERE COMES PARAMETERS FOR GAUGE VELOCITY-->
+	<gauge_velocity>
+	
+		<velocities id="N1_params">
+			<velocity id="vel1" pointerPosition="99" time="5" ease="Linear.easeNone" />
+		</velocities>
+
+		<velocities id="EGT_params">
+			<velocity id="vel1" pointerPosition="800" time="3.5" ease="Linear.easeNone" xpoint="700" xelement="x_element1" />
+	        <velocity id="vel2" wait="0" pointerPosition="1200" time="5" ease="Quadratic.easeOut" />
+			<velocity id="vel3" wait="1" pointerPosition="800" time="5" ease="Quartic.easeIn" />
+			<velocity id="vel4" pointerPosition="200" time="5" ease="Quartic.easeOut" xpoint="400" xelement="x_element3" />
+		</velocities>
+		
+	</gauge_velocity>
+</additional_screen_data>

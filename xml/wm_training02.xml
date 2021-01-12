@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  BOEING 737 SAMPLE XML                    ** -->
+<!-- *********************************************** -->
+
+<site_data>
+	
+	<!-- 1. SETTINGS - Here come some configuration settings that we use for this training! -->
+	<settings>
+		<training name="BOEING 737 SAMPLE XML" />
+		<screen_animation file="xml/screen_animation01.xml" defaults="xml/screen_defaults01.xml" />
+		<quick_reference file="xml/AUTO SLAT FAIL.xml" />
+		<sound status="on" />
+	</settings>
+	
+	<!-- 2. STATES -->
+	<states>
+		<!-- DEFAULT STATE, before training starts -->
+		<state id="default">
+			<help_box><![CDATA[ PRESS PLAY BUTTON(>) TO BEGIN ]]></help_box>
+			<element panel="psue" name="pseu_light" status="on" />
+			<element panel="flt_controls" name="standby_hyd_low_quantity_light" status="on" />
+			<element panel="flt_controls" name="flight_control_light_a" status="on" />
+			<element panel="flt_controls" name="flight_control_light_b" status="on" />
+			<element panel="recall" name="flt_cont_light" status="on" />
+			<element panel="recall" name="apu_light" status="on" />
+			<element panel="recall" name="hyd_light" status="on" />
+			<element panel="recall" name="air_cond_light" status="on" />
+			<element panel="autopilot_test" name="cpt_at_prst_light" status="on" />
+			<element panel="tl" name="flap_lever" status="40" />
+			<element panel="landing_gear2" name="gear_lever" status="down" />
+<!--			<element panel="autopilot_test" name="stab_out_of_trim_light" status="on" />  -->
+			
+			<element panel="fuel" name="filter_bypass_l" status="on" />
+			<element panel="fuel" name="fwd_pump1_low_pressure_light" status="on" />
+			<element panel="fuel" name="cross_feed_valve_open_light" status="dim" />
+			
+			<element panel="navs_and_displays" name="vhf_nav_selector" status="2" />
+			<element panel="pressurisation3" name="flt_alt" value="23000" />
+			<element panel="pressurisation3" name="land_alt" value="5000" />
+			<element panel="pressurisation3" name="valve" value="0" />
+			<element panel="flt_controls" name="flight_control_switch_a" status="2" />
+<!--			<element panel="electrical1" name="dc_amps" text="100" />  -->
+			<element panel="electrical1" name="cps_freq" text="202" />
+			<element panel="electrical1" name="dc_volts" text="303" />
+			<element panel="electrical1" name="ac_amps" text="404" />
+			<element panel="electrical1" name="ac_volts" text="555" />
+			<element panel="electrical2" name="standby_power_off_switch" status="3" />
+			<element panel="electrical2" name="drive1_disconnect_switch" status="2" />
+			<element panel="electrical2" name="drive2_disconnect_switch" status="2" />
+			<element panel="fire" name="switch1" status="on" />
+			<element panel="fire" name="switch_apu" status="on" />
+			<element panel="fire" name="switch2" status="on" />
+			<element panel="engines" name="eec1_button" light="on" />
+			<element panel="le_devices" name="slat1_transit" light="on" />
+			<element panel="le_devices" name="slat8_transit" light="on" />
+			<element panel="le_devices" name="slat6_ext" light="on" />
+			<element panel="le_devices" name="flap3_ext" light="on" />
+			<element panel="elt" name="elt_switch" status="2" />
+			<element panel="flt_controls" name="flight_control_switch_a" status="3" />
+			
+			<screen screenID="default" />
+		</state>
+		
+		<!-- START STATE, when training starts -->
+		<state id="start">
+			<help_box><![CDATA[ RECALL > FIRE WARN... OFF  ]]></help_box>
+			<element panel="psue" name="pseu_light" status="off" />
+			<element panel="recall" name="fire_warn" alert="2" />
+			<element sound="altitude_horn" status="on" />
+			<screen screenID="start"/>
+		</state>
+
+		<!-- Step 1. Master caut -->
+		<state id="1" flightdeck="disable">
+			<key panel="recall" element="fire_warn" switch="off" />
+			<help_box source="ECAM" note="Note: from main XML!"><![CDATA[ RECALL > CAPT RECALL... OFF ]]></help_box>
+			<info_box1><![CDATA[ INFO BOX 1 TEXT ]]></info_box1>
+			<info_box2 gotoFrame="2"><![CDATA[ INFO BOX 2 TEXT ]]></info_box2>
+			
+			<element panel="tl" name="tl1" status="50" />
+			<element panel="tl" name="tl2" status="50" />
+			<element panel="tl" name="tl_both" status="50" />
+			<element panel="pressurisation3" name="valve" value="50" time="10" />
+			<element panel="brake_press" name="brake_pressure" value="1" time="5" />
+			<element sound="altitude_horn" status="off" />
+			<element panel="engines" name="eec1_button" status="on" />
+			<element panel="n1_spd_ref" name="anti_skid_inop_light" status="on" />
+<!--			<element panel="autopilot_test" name="cpt_at_prst_light" alert="1" />  -->
+			<highlight panel="brake_press" />
+<!--			<highlight panel="le_devices, psue, flt_controls, stab_trim" />  -->
+			<screen name="ecam" screenID="1"/>
+		</state>
+
+		<!-- Step 2 -->
+		<state id="2">
+<!--			<key panel="brake_press" /> -->
+<!--			<key panel="pressurisation1" element="alt_horn_cutout_button" switch="on" />  -->
+<!--			<key panel="mcp" element="at" switch="1" />  -->
+<!--				<key panel="xpndr" element="dial" switch="1" />  -->
+<!--			<key panel="fuel" element="cross_feed_selector" switch="1" />  -->
+			<!-- <key panel="recall" element="recall" switch="off" />  -->
+<!--			<key panel="engine_start" element="start_switch_1" switch="3" /> -->
+<!--			<key panel="engine_start" element="ignition_switch" switch="3" />  -->
+<!--			<key panel="engine_start" element="start_switch_2" switch="3" />  -->
+<!--			<key panel="apu" element="start_switch" switch="3" />  -->
+<!--			<key panel="pressurisation3" element="manual_switch" switch="1" />  -->
+<!--			<key panel="pressurisation3" element="flt_alt" switch="10000" />  -->
+<!--			<key panel="pressurisation3" element="land_alt" switch="1000" />  -->
+<!--			<key panel="flt_controls" element="alternate_flaps_master_switch" switch="2" />  -->
+<!--			<key panel="electrical2" element="drive1_disconnect_switch" switch="3" />  -->
+<!--			<key panel="gpws" element="flap_inhibit" switch="2" />  -->
+			
+
+<!--			<key panel="elt" element="elt_switch" switch="1" /> -->
+<!--			<key panel="engines" element="eec1_button" switch="1" />  -->
+<!--  			<key panel="fire" element="switch1" switch="0" /> -->
+<!-- 			<key panel="fire" element="switch_apu" switch="either" />  -->
+<!--				<key panel="tl" element="disconnect" switch="on" />  -->
+<!--				<key panel="tl" element="flap_lever" switch="25" />  -->
+				<key panel="tl" element="tl_both" switch="60" />
+<!--			<key panel="apu" element="start_switch" switch="1" />  -->
+<!--			<key panel="autopilot_test" element="cpt_at_prst_light" switch="off" />  -->
+<!--				<key panel="landing_gear2" element="gear_lever" switch="off" />  -->
+			
+			<help_box source="QRH"><![CDATA[ ENGINE START > SWITCH 1 ... FLT ]]></help_box>
+<!--		   <element panel="recall" name="master_caut" status="on" />  -->
+			<element panel="recall" name="flt_cont_light" status="on" />
+			<element panel="recall" name="irs_light" status="on" />
+			<element panel="fuel" name="cross_feed_valve_open_light" status="on" />
+<!--			<element panel="recall" name="fire_warn" alert="2" />  -->
+			<element panel="fire" name="switch1" status="off" />
+			<element panel="fire" name="switch_apu" status="off" />
+			<element panel="fire" name="switch2" status="off" />
+			<element panel="engines" name="eec1_button" light="off" />
+			<element panel="apu" name="apu_fault_light" wait="3" status="on" />
+			<highlight panel="brake_press" />
+			<screen name="ecam" screenID="2" />
+		</state>
+		
+		<!-- Step 3 -->
+		<state id="3">
+			<!-- <key panel="recall" element="master_caut" switch="off" />  -->
+			<key panel="fire" element="switch_apu" switch="either" />
+			<help_box note="Note: from main XML!"><![CDATA[ OPEN HYDRAULICS DOORS TO COMPLETE STEP ]]></help_box>
+			<info_box1><![CDATA[ OPEN HYDRAULICS DOORS TO COMPLETE STEP! ]]></info_box1>
+			<screen name="ecam" screenID="3" />
+			<additional screen="c_press, bleed, cond" />
+		</state>
+		
+		<!-- Step 4 -->
+		<state id="4">
+			<key panel="hydraulics_doors" />
+			<help_box source="SOPS"  note="Note: from main XML!"><![CDATA[ DOME WHITE > SWITCH... BRIGHT ]]></help_box>
+			<screen name="ecam" screenID="4" />
+		</state>
+
+		<!-- Step 5 -->
+		<state id="5">
+			<key panel="dome_white" element="dome_white_switch" switch="3" />
+			<help_box completed="yes"><![CDATA[ECAM ACTIONS COMPELETE ]]></help_box>
+			<screen name="ecam" screenID="5" />
+		</state>
+		
+	</states>
+	
+</site_data>

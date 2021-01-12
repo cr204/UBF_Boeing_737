@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<main title= "QUICK REFERENCE HANDBOOK">
+	<sub title= "TR UNIT">
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>Condition: <font size="14">One or more transformer rectifier units</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14"><b>                 are failed.</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14"><b>1    Do not use the AFDS approach mode during an</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14"><b>      ILS approach.</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="15"><b>Note: <font size="14">Autoland is not available.</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="15"><b>Note: <font size="14">The AFDS approach mode can be used during</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<b><font size="14">           an IAN approach.</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="16"><b>                                     ■ ■ ■ ■</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+		</sub>
+</main>

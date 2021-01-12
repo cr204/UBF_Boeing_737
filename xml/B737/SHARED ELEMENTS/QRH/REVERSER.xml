@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<main title= "QUICK REFERENCE HANDBOOK">
+	<sub title= "REVERSER IN CRUISE">
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>Condition: <font size="14">A fault occurs in the thrust reverser system.</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="15"><b>Note: <font size="14">Additional system failures may cause in-flight deployment.</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="14">1 Expect normal reverser operation after landing.</font>]]></displaydata>
+				<tables></tables>
+			</para>
+		</sub>
+</main>

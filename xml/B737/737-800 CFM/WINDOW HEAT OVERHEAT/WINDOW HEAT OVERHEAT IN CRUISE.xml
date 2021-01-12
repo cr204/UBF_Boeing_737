@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  WINDOW OVERHEAT                    ** -->
+<!-- *********************************************** -->
+
+<site_data>
+	
+	<!-- 1. SETTINGS - Here come some configuration settings that we use for this training! -->
+	<settings>
+		<training name="WINDOW HEAT OVERHEAT IN CRUISE" />
+		<screen_animation file="xml/B737/737-800 CFM/WINDOW HEAT OVERHEAT/ANIMATION WINDOW HEAT OVERHEAT CRUISE.xml" defaults="xml/B737/SHARED ELEMENTS/DEFAULT PHASES/PHASE CRUISE.xml" />
+		<sound status="on" />
+	</settings>
+	
+	<!-- 2. STATES -->
+	<states>
+		<!-- DEFAULT STATE, before training starts -->
+		<state id="default">
+			<help_box><![CDATA[ PRESS PLAY BUTTON(>) TO BEGIN ]]></help_box>
+		
+			<screen screenID="default" />
+		</state>
+		
+		<!-- START STATE, when training starts -->
+		<state id="start">
+			<help_box source="SOPS" ><![CDATA[ ANTI ICE > CONFIRM FAULT ]]></help_box>
+			<element panel="recall" name="anti_ice_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+			<!--<element panel="anti_ice_panel_1" name="overheat_l_side_light" status="on" /> -->
+			<screen screenID="start"/>
+		</state>
+
+		<!-- Step 1. Master caut -->
+		<state id="1" >
+			<key panel="anti_ice_panel_1" />
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... CANCEL  ]]></help_box>
+			<screen name="ecam" screenID="1"/>
+		</state>
+
+		<!-- Step 2 -->
+		<state id="2">
+			<key panel="recall" element="master_caut" switch="off" />
+			<help_box source="QRH"><![CDATA[ ANTI-ICE > WINDOW HEAT SWITCH... OFF ]]></help_box>
+			<screen name="ecam" screenID="2" />
+		</state>
+		
+		<!-- Step 3 -->
+		<state id="3">
+			<key panel="anti_ice_panel_1" element="overheat_l_side_switch" switch="2" />
+			<help_box source="SOPS" ><![CDATA[ RECALL > RECALL... PRESS ]]></help_box>
+			<element panel="anti_ice_panel_1" name="overheat_l_side_light" status="off" /> 
+			<screen name="ecam" screenID="3" />
+		</state>
+		
+		<!-- Step 4 -->
+		<state id="4">
+			<key panel="recall" element="recall" switch="off" />
+			<help_box completed="yes"><![CDATA[QRH NNC COMPLETE ]]></help_box>
+			<screen name="ecam" screenID="4" />
+		</state>
+		
+	</states>
+	
+</site_data>

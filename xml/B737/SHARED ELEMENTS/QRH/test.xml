@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<main title= "QUICK REFERENCE HANDBOOK">
+	<sub title= "ELT">
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- SPD FLY..........................................................................THE GREEN</b></font><br><font size="10">Fly within the green area of the speed scale to ensure safe flight. For slats/flaps retraction, it is better to fly at the top of the green area of the speed scale.....</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- CAUTION</b></font><br><font size="11">The altitude displayed on the PFD is a GPS altitude</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- BACK UP NAV.............................................................................USE</b></font><br><font size="11">When all ADR’s are OFF, both FM’s are lost. Revert to Back Up Nav via the NAV B/UP prompt on the MCDU MENU page.</font>]]>
+				</displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- NAVAID TUNING................................................................USE RMP</b></font><br><font size="11">Set both RMP’s to NAV..</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata>
+				<![CDATA[<font size="12"><b>- MANUAL CABIN PRESSURE CONTROL</b><br>- MODE SEL..................................................................................MAN<br>- MAN V.S CTL......................................................................AS RQRD</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="table">
+				<displaydata><![CDATA[<font size="12"><b>MAN CAB PR CTL</b><br><br>TGT V/A : CLIMB 500 FT/MIN<br>DESC 300 FT/MIN</font>]]></displaydata>
+				<tables title="A/C GPS ALT CAB ALT TGT">
+					<col1><![CDATA[<font size="12">410<br>350<br>300<br>250<br>&lt;200</font>]]></col1>
+					<col2><![CDATA[<font size="12">8000<br>7000<br>5500<br>3000<br>0</font>]]></col2>
+				</tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>FOR APPROACH<br><br>- SPD........................................................................ FLY THE GREEN</b></font><br><font size="10">Before extending the slats/flaps, it is better to fly at the bottom of the speed scale green area, and to be in straight flight..</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- FOR LDG.......................................................................USE FLAP 3</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- LDG DIST PROC....................................................................APPLY</b></font><br><font size="11">Refer to tge QRH Part 2 (from 2.32_).</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- APPR SPD...................................................................FLY THE BUG</b><br>During the approach, the bug indicates Vapp.</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- SPD FLY..........................................................................THE GREEN</b></font><br><font size="10">Fly within the green area of the speed scale to ensure safe flight. For slats/flaps retraction, it is better to fly at the top of the green area of the speed scale.....</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- CAUTION</b></font><br><font size="11">The altitude displayed on the PFD is a GPS altitude</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- BACK UP NAV.............................................................................USE</b></font><br><font size="11">When all ADR’s are OFF, both FM’s are lost. Revert to Back Up Nav via the NAV B/UP prompt on the MCDU MENU page.</font>]]>
+				</displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- NAVAID TUNING................................................................USE RMP</b></font><br><font size="11">Set both RMP’s to NAV..</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata>
+				<![CDATA[<font size="12"><b>- MANUAL CABIN PRESSURE CONTROL</b><br>- MODE SEL..................................................................................MAN<br>- MAN V.S CTL......................................................................AS RQRD</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="table">
+				<displaydata><![CDATA[<font size="12"><b>MAN CAB PR CTL</b><br><br>TGT V/A : CLIMB 500 FT/MIN<br>DESC 300 FT/MIN</font>]]></displaydata>
+				<tables title="A/C GPS ALT CAB ALT TGT">
+					<col1><![CDATA[<font size="12">410<br>350<br>300<br>250<br>&lt;200</font>]]></col1>
+					<col2><![CDATA[<font size="12">8000<br>7000<br>5500<br>3000<br>0</font>]]></col2>
+				</tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>FOR APPROACH<br><br>- SPD........................................................................ FLY THE GREEN</b></font><br><font size="10">Before extending the slats/flaps, it is better to fly at the bottom of the speed scale green area, and to be in straight flight..</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- FOR LDG.......................................................................USE FLAP 3</b></font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- LDG DIST PROC....................................................................APPLY</b></font><br><font size="11">Refer to tge QRH Part 2 (from 2.32_).</font>]]></displaydata>
+				<tables></tables>
+			</para>
+			<para style="text">
+				<displaydata><![CDATA[<font size="12"><b>- APPR SPD...................................................................FLY THE BUG</b><br>During the approach, the bug indicates Vapp.</font>]]></displaydata>
+				<tables></tables>
+			</para>
+		</sub>
+</main>

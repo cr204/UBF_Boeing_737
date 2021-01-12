@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  SPEED TRIM FAIL IN CRUISE                ** -->
+<!-- *********************************************** -->
+
+<site_data>
+	
+	<!-- 1. SETTINGS - Here come some configuration settings that we use for this training! -->
+	<settings>
+		<training name="SPEED TRIM FAIL IN CRUISE" />
+		<screen_animation file="xml/B737/800 CFM/SPEED TRIM FAIL/ANIMATION SPEED TRIM FAIL IN CRUISE.xml" defaults="xml/B737/SHARED ELEMENTS/DEFAULT PHASES/PHASE CRUISE.xml" />
+		<quick_reference file="xml/B737/SHARED ELEMENTS/QRH/QRH SPEED TRIM FAIL.xml" />
+		<sound status="on" />
+	</settings>
+	
+	<!-- 2. STATES -->
+	<states>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="default">
+			<help_box><![CDATA[ PRESS PLAY BUTTON(>) TO BEGIN ]]></help_box>
+			<screen screenID="default" />
+		</state>
+<!-- ************************************************** -->		
+		<!-- STEP NUMBER -->
+		<state id="start">
+		<!-- HELP BOX -->
+			<help_box source="SOPS" ><![CDATA[ FLT CONTROL PANEL > CONFIRM FAULT ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="flt_cont_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+			<element panel="flt_controls" name="speed_trim_fail_light" status="on" />
+		<!-- ANIMATION STEP -->
+			<screen screenID="start"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="1" >
+		<!-- KEY ACTION -->	
+			<key panel="flt_controls" />
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECALL > MASTER CAUTION... CANCEL  ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="flt_controls" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="1"/>
+		</state>
+<!-- ************************************************** -->
+		<!-- STEP NUMBER -->
+		<state id="2">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- HELP BOX -->
+			<help_box source="QRH" note="Note: Continue normal operation."><![CDATA[ CHECK QRH.  RECALL > RECALL... PRESS ]]></help_box>
+		<!-- PANEL HIGHLIGHT-->
+			<highlight panel="flt_controls" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="2" />
+		</state>
+<!-- ************************************************** -->	
+		<!-- STEP NUMBER -->
+		<state id="3">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="recall" switch="off" />
+		<!-- HELP BOX -->
+			<help_box><![CDATA[ RECAL > MASTER CAUTION... CANCEL ]]></help_box>
+		<!-- PANEL ELEMENT CONTROL -->	
+			<element panel="recall" name="flt_cont_light" status="on" />
+			<element panel="recall" name="master_caut" alert="2" />
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="3" />
+		</state>
+<!-- ************************************************** -->	
+		<!-- STEP NUMBER -->
+		<state id="4">
+		<!-- KEY ACTION -->	
+			<key panel="recall" element="master_caut" switch="off" />
+		<!-- HELP BOX -->
+			<help_box completed="yes"><![CDATA[ QRH NNC COMPLETE ]]></help_box>
+		<!-- ANIMATION STEP -->
+			<screen name="ecam" screenID="4" />
+		</state>
+<!-- ************************************************** -->		
+	</states>
+	
+</site_data>

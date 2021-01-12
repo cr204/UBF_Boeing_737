@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- *********************************************** -->
+<!-- **  SCREEN ELEMENTS DEFAULT VALUES           ** -->
+<!-- *********************************************** -->
+
+<screen_data>
+	<default_values>
+		<!-- Default element values for - UDU -->
+		<screen name="UDU">
+			<element name="eng1_n1_gauge" property="pointerPosition" value="86.7" />
+			<element name="eng2_n1_gauge" property="pointerPosition" value="86.6" />
+			
+			<element name="eng1_egt_gauge" property="pointerPosition" value="611" />
+			<element name="eng2_egt_gauge" property="pointerPosition" value="614" />
+			
+			<element name="eng1_fuel_gauge" property="pointerPosition" value="2000" />
+			<element name="eng2_fuel_gauge" property="pointerPosition" value="2000" />
+			<element name="fuel_gauge" property="pointerPosition" value="0" />
+			
+			<element name="eng1_start_valve_open" property="visible" value="false" />
+			<element name="eng2_start_valve_open" property="visible" value="false" />
+			<element name="eng1_oil_filter_bypass" property="visible" value="false" />
+			<element name="eng2_oil_filter_bypass" property="visible" value="false" />
+			<element name="eng1_low_oil_pressure" property="visible" value="false" />
+			<element name="eng2_low_oil_pressure" property="visible" value="false" />
+			
+			<!-- Panel Element Control -->
+			
+			<panel_element panel="pressurisation1" name="diff_press_gauge" value="7.5" />
+    			<panel_element panel="pressurisation1" name="cabin_alt" value="8" /> 
+     			<panel_element panel="pressurisation1" name="cabin_vs_gauge" value="0" />
+     			
+     			<panel_element panel="pressurisation3" name="flt_alt" value="34000" />
+            		<panel_element panel="pressurisation3" name="land_alt" value="200" />
+     			<panel_element panel="pressurisation3" name="valve" value="25" />
+			<panel_element name="yaw_damper_switch" panel="flt_controls" status="2" />
+			
+			<panel_element panel="pressurisation2" name="left_duct_pressure" value="60" />
+			<panel_element panel="pressurisation2" name="right_duct_pressure" value="55" />
+			
+			<!--Need to be 3 position switches:-->
+			<panel_element name="display_control_panel_selector" panel="navs_and_displays" status="1" />
+			<panel_element name="vhf_nav_selector" panel="navs_and_displays" status="1" />
+			<panel_element name="irs_selector" panel="navs_and_displays" status="1" />
+			<panel_element name="fmc_selector" panel="navs_and_displays" status="1" />
+			
+			<panel_element name="fwd_pump1_switch" panel="fuel" status="2" />
+			<panel_element name="aft_pump1_switch" panel="fuel" status="2" />
+			<panel_element name="fwd_pump2_switch" panel="fuel" status="2" />
+			<panel_element name="aft_pump2_switch" panel="fuel" status="2" />
+			<panel_element name="ctr_tk_l_pump_switch" panel="fuel" status="2" />
+			<panel_element name="ctr_tk_r_pump_switch" panel="fuel" status="2" />
+			
+			<panel_element name="fwd_pump1_switch" panel="fuel" status="2" />
+			<panel_element name="aft_pump1_switch" panel="fuel" status="2" />
+			<panel_element name="fwd_pump2_switch" panel="fuel" status="2" />
+			<panel_element name="aft_pump2_switch" panel="fuel" status="2" />
+			<panel_element name="ctr_tk_l_pump_switch" panel="fuel" status="2" />
+			<panel_element name="ctr_tk_r_pump_switch" panel="fuel" status="2" />
+			
+			<panel_element name="cab_util_switch" panel="electrical1" status="3" />
+			<panel_element name="dc_meters_selector" panel="electrical1" status="2" />
+			<panel_element name="ac_meters_selector" panel="electrical1" status="1" />
+			
+			<!--Should be 3 position switch-->
+			
+			<panel_element name="standby_power_off_switch" panel="electrical2" status="2" />
+			<panel_element name="gen1_switch" panel="electrical3" status="1" />
+			<panel_element name="gen2_switch" panel="electrical3" status="1" />
+			<panel_element name="apu_bus1_switch" panel="electrical3" status="1" />
+			<panel_element name="apu_bus2_switch" panel="electrical3" status="1" />
+			
+			<panel_element name="dome_white_switch" panel="dome_white" status="2" />
+			
+			<panel_element name="no_smoking_switch" panel="emerg_exit" status="2" />
+			<panel_element name="seat_belts_switch" panel="emerg_exit" status="2" />
+			
+			<panel_element name="hyd_pump_eng1_switch" panel="hydraulics_doors" status="2" />
+			<panel_element name="hyd_pump_eng2_switch" panel="hydraulics_doors" status="2" />
+			<panel_element name="hyd_pump_elec1_switch" panel="hydraulics_doors" status="2" />-->
+			<panel_element name="hyd_pump_elec2_switch" panel="hydraulics_doors" status="2" />
+			
+			<!-- Are these 3 position switches?-->
+			<panel_element name="probe_heat_a_switch" panel="anti_ice1" status="2" />
+			<panel_element name="probe_heat_b_switch" panel="anti_ice1" status="2" />
+			
+			<panel_element name="overheat_l_side_switch" panel="anti_ice1" status="2" />
+			<panel_element name="overheat_l_fwd_switch" panel="anti_ice1" status="2" />
+			<panel_element name="overheat_r_fwd_switch" panel="anti_ice1" status="2" />
+			<panel_element name="overheat_r_side_switch" panel="anti_ice1" status="2" />
+			
+			<panel_element name="bleed1_selector" panel="pressurisation2" status="2" />
+			<panel_element name="apu_bleed_selector" panel="pressurisation2" status="2" />
+			<panel_element name="bleed2_selector" panel="pressurisation2" status="2" />
+			
+			<panel_element name="engine1_start_lever" panel="tl" status="idle" />
+			<panel_element name="engine2_start_lever" panel="tl" status="idle" />
+			
+			 <panel_element panel="apu" name="egt_gauge" value="400" />
+			
+		</screen>
+		
+		<!-- Default element values for LDU -->
+		<screen name="LDU" >
+			<element name="eng1_n2_gauge" property="pointerPosition" value="105" />
+			<element name="eng2_n2_gauge" property="pointerPosition" value="50" />
+			
+			<element name="eng1_oil_press" property="pointerPosition" value="10" />
+			<element name="eng2_oil_press" property="pointerPosition" value="80" />
+			
+			<element name="eng1_oil_temp" property="pointerPosition" value="120" />
+			<element name="eng2_oil_temp" property="pointerPosition" value="165" />
+			
+			<element name="eng1_vib" property="pointerPosition" value="1" />
+			<element name="eng2_vib" property="pointerPosition" value="4.5" />
+			
+			<element name="eng1_oil_qty" property="pointerPosition" value="15" />
+			<element name="eng2_oil_qty" property="pointerPosition" value="3" />
+			<!-- // -->
+		</screen>		
+			
+		
+		<!--  ******************************************** -->
+		<!--  Screen PFD/ND                                -->
+		 
+		
+		<!-- Default element values for CAPT PFD screen -->
+		<screen name="CAPT_PFD">
+			<element name="altimeter_tape" property="altPosition" value="36000" />
+			<element name="speed_tape" property="iasPosition" value="280" />
+			<element name="alt" property="visible" value="false" />
+   			<element name="spd_lim" property="visible" value="false" />
+   			<element name="dspl_source" property="visible" value="false" />
+		</screen>
+		
+		<!-- Default element values for CAPT ND screen -->
+		<screen name="CAPT_ND">
+			<!-- // -->
+		</screen>
+		
+		<!-- Default element values for FO PFD screen -->
+		<screen name="FO_PFD">
+			<element name="altimeter_tape" property="altPosition" value="36000" />
+			<element name="speed_tape" property="iasPosition" value="280" />
+		</screen>
+		
+		<!-- Default element values for FO ND screen -->
+		<screen name="FO_ND">
+			<!-- // -->
+		</screen>
+		
+	</default_values>
+</screen_data>
